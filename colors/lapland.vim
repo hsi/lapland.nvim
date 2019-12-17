@@ -73,3 +73,5 @@ highlight! link SpellCap     SpellBad
 highlight! link TermCursor   Cursor
 highlight! link VisualNOS    Visual
 " }}}
+
+" vim: foldmethod=marker
