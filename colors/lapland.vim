@@ -16,6 +16,8 @@ set background=dark
 " }}}
 
 " User Interface {{{
+" Reference: https://neovim.io/doc/user/syntax.html#highlight-groups
+
 highlight ColorColumn  ctermbg=235  ctermfg=NONE cterm=NONE
 highlight Conceal      ctermbg=NONE ctermfg=231  cterm=NONE
 highlight Cursor       ctermbg=46   ctermfg=234  cterm=NONE
@@ -75,6 +77,8 @@ highlight! link VisualNOS    Visual
 " }}}
 
 " General Groups {{{
+" Reference: https://neovim.io/doc/user/syntax.html#{group-name}
+
 highlight Comment        ctermbg=NONE ctermfg=244  cterm=NONE
 
 highlight Constant       ctermbg=NONE ctermfg=198  cterm=NONE
