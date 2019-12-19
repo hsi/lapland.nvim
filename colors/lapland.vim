@@ -74,4 +74,58 @@ highlight! link TermCursor   Cursor
 highlight! link VisualNOS    Visual
 " }}}
 
+" General Groups {{{
+highlight Comment        ctermbg=NONE ctermfg=244  cterm=NONE
+
+highlight Constant       ctermbg=NONE ctermfg=198  cterm=NONE
+highlight String         ctermbg=NONE ctermfg=36   cterm=NONE
+highlight Character      ctermbg=NONE ctermfg=46   cterm=NONE
+
+highlight Identifier     ctermbg=NONE ctermfg=153  cterm=NONE
+
+highlight Statement      ctermbg=NONE ctermfg=229  cterm=NONE
+highlight Conditional    ctermbg=NONE ctermfg=229  cterm=bold
+highlight Repeat         ctermbg=NONE ctermfg=229  cterm=bold
+highlight Operator       ctermbg=NONE ctermfg=39   cterm=NONE
+highlight Exception      ctermbg=NONE ctermfg=229  cterm=bold
+
+highlight PreProc        ctermbg=NONE ctermfg=39   cterm=NONE
+
+highlight Type           ctermbg=NONE ctermfg=39   cterm=bold
+
+highlight Special        ctermbg=NONE ctermfg=231  cterm=NONE
+
+highlight Underlined     ctermbg=NONE ctermfg=NONE cterm=underline
+
+highlight Ignore         ctermbg=231  ctermfg=232  cterm=NONE
+
+highlight Error          ctermbg=160  ctermfg=231  cterm=bold
+
+highlight Todo           ctermbg=231  ctermfg=234  cterm=bold
+
+highlight! link Number  Constant
+highlight! link Boolean Constant
+highlight! link Float   Constant
+
+highlight! link Function Identifier
+
+highlight! link Label   Statement
+highlight! link Keyword Statement
+
+highlight! link Include   PreProc
+highlight! link Define    PreProc
+highlight! link Macro     PreProc
+highlight! link PreCondit PreProc
+
+highlight! link StorageClass Type
+highlight! link Structure    Type
+highlight! link Typedef      Type
+
+highlight! link SpecialChar    Special
+highlight! link Tag            Special
+highlight! link Delimiter      Special
+highlight! link SpecialComment Special
+highlight! link Debug          Special
+" }}}
+
 " vim: foldmethod=marker
