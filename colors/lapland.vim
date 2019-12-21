@@ -132,4 +132,16 @@ highlight! link SpecialComment Special
 highlight! link Debug          Special
 " }}}
 
+" Diff
+highlight! link diffAdded DiffAdd
+highlight! link diffRemoved DiffDelete
+highlight! link diffChanged Statement
+
+" Git Commit
+highlight! link gitcommitBranch Special
+highlight! link gitcommitType Normal
+highlight! link gitcommitHeader Type
+highlight! link gitcommitFile Identifier
+highlight! link gitcommitArrow Operator
+
 " vim: foldmethod=marker
