@@ -1,6 +1,10 @@
 # lapland.vim
 Neovim/Vim theme inspired by Lapland's fruits
 
+Screenshot
+----------
+![Screenshot](./screenshot.png)
+
 Color Palette
 -------------
 ![Color Palette](./color-palette.png)
