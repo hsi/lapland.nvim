@@ -22,4 +22,4 @@ Feel free to open an issue or send a pull request!
 
 License
 -------
-[MIT]: https://en.wikipedia.org/wiki/MIT_License
+[MIT](https://en.wikipedia.org/wiki/MIT_License)
