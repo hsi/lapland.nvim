@@ -37,7 +37,7 @@ highlight MoreMsg      ctermbg=NONE ctermfg=244  cterm=bold
 highlight MsgArea      ctermbg=NONE ctermfg=231  cterm=NONE
 highlight MsgSeparator ctermbg=NONE ctermfg=244  cterm=NONE
 highlight NonText      ctermbg=NONE ctermfg=144  cterm=bold
-highlight Normal       ctermbg=234  ctermfg=254  cterm=NONE
+highlight Normal       ctermbg=234  ctermfg=253  cterm=NONE
 highlight NormalFloat  ctermbg=235  ctermfg=231  cterm=NONE
 highlight Pmenu        ctermbg=235  ctermfg=244  cterm=NONE
 highlight PmenuSbar    ctermbg=235  ctermfg=NONE cterm=NONE
