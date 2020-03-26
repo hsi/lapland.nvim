@@ -22,7 +22,7 @@ highlight ColorColumn  ctermbg=235  ctermfg=NONE cterm=NONE
 highlight Conceal      ctermbg=NONE ctermfg=231  cterm=NONE
 highlight Cursor       ctermbg=46   ctermfg=234  cterm=NONE
 highlight CursorLine   ctermbg=236  ctermfg=NONE cterm=NONE
-highlight CursorLineNr ctermbg=236  ctermfg=244  cterm=NONE
+highlight CursorLineNr ctermbg=236  ctermfg=144  cterm=NONE
 highlight DiffAdd      ctermbg=NONE ctermfg=46   cterm=NONE
 highlight DiffDelete   ctermbg=NONE ctermfg=160  cterm=NONE
 highlight Directory    ctermbg=NONE ctermfg=39   cterm=bold
