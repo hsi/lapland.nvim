@@ -21,16 +21,16 @@ set background=dark
 highlight ColorColumn  ctermbg=235  ctermfg=NONE cterm=NONE
 highlight Conceal      ctermbg=NONE ctermfg=231  cterm=NONE
 highlight Cursor       ctermbg=46   ctermfg=234  cterm=NONE
-highlight CursorLine   ctermbg=236  ctermfg=NONE cterm=NONE
-highlight CursorLineNr ctermbg=236  ctermfg=144  cterm=NONE
+highlight CursorLine   ctermbg=235  ctermfg=NONE cterm=NONE
+highlight CursorLineNr ctermbg=235  ctermfg=144  cterm=NONE
 highlight DiffAdd      ctermbg=NONE ctermfg=46   cterm=NONE
 highlight DiffDelete   ctermbg=NONE ctermfg=160  cterm=NONE
 highlight Directory    ctermbg=NONE ctermfg=39   cterm=bold
-highlight EndOfBuffer  ctermbg=NONE ctermfg=236  cterm=bold
+highlight EndOfBuffer  ctermbg=NONE ctermfg=240  cterm=bold
 highlight ErrorMsg     ctermbg=160  ctermfg=231  cterm=bold
 highlight FoldColumn   ctermbg=NONE ctermfg=244  cterm=NONE
 highlight Folded       ctermbg=NONE ctermfg=39   cterm=bold
-highlight LineNr       ctermbg=NONE ctermfg=236  cterm=NONE
+highlight LineNr       ctermbg=NONE ctermfg=240  cterm=NONE
 highlight MatchParen   ctermbg=NONE ctermfg=231  cterm=bold
 highlight ModeMsg      ctermbg=NONE ctermfg=144  cterm=NONE
 highlight MoreMsg      ctermbg=NONE ctermfg=244  cterm=bold
@@ -79,7 +79,7 @@ highlight! link VisualNOS    Visual
 " General Groups {{{
 " Reference: https://neovim.io/doc/user/syntax.html#{group-name}
 
-highlight Comment        ctermbg=NONE ctermfg=244  cterm=NONE
+highlight Comment        ctermbg=NONE ctermfg=240  cterm=NONE
 
 highlight Constant       ctermbg=NONE ctermfg=198  cterm=NONE
 highlight String         ctermbg=NONE ctermfg=36   cterm=NONE
