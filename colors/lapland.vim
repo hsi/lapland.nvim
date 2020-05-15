@@ -144,4 +144,10 @@ highlight! link gitcommitHeader Type
 highlight! link gitcommitFile Identifier
 highlight! link gitcommitArrow Operator
 
+" XML
+highlight! link xmlTagName Type
+highlight! link xmlEndTag Type
+highlight! link xmlNamespace Identifier
+highlight! link xmlAttribPunct Operator
+
 " vim: foldmethod=marker
