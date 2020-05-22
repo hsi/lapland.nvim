@@ -31,7 +31,7 @@ highlight ErrorMsg     ctermbg=160  ctermfg=231  cterm=bold
 highlight FoldColumn   ctermbg=NONE ctermfg=244  cterm=NONE
 highlight Folded       ctermbg=NONE ctermfg=39   cterm=bold
 highlight LineNr       ctermbg=NONE ctermfg=240  cterm=NONE
-highlight MatchParen   ctermbg=NONE ctermfg=231  cterm=bold
+highlight MatchParen   ctermbg=240  ctermfg=231  cterm=bold
 highlight ModeMsg      ctermbg=NONE ctermfg=144  cterm=NONE
 highlight MoreMsg      ctermbg=NONE ctermfg=244  cterm=bold
 highlight MsgArea      ctermbg=NONE ctermfg=231  cterm=NONE
