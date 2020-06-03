@@ -60,7 +60,7 @@ highlight TabLineSel   ctermbg=235  ctermfg=144  cterm=NONE
 highlight TermCursorNC ctermbg=244  ctermfg=234  cterm=NONE
 highlight Title        ctermbg=NONE ctermfg=39   cterm=bold
 highlight VertSplit    ctermbg=NONE ctermfg=244  cterm=NONE
-highlight Visual       ctermbg=93   ctermfg=229  cterm=NONE
+highlight Visual       ctermbg=93   ctermfg=229  cterm=bold
 highlight WarningMsg   ctermbg=NONE ctermfg=202  cterm=NONE
 highlight Whitespace   ctermbg=160  ctermfg=231  cterm=NONE
 highlight WildMenu     ctermbg=NONE ctermfg=229  cterm=NONE
