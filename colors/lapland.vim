@@ -34,7 +34,7 @@ highlight LineNr       ctermbg=NONE ctermfg=240  cterm=NONE
 highlight MatchParen   ctermbg=240  ctermfg=231  cterm=bold
 highlight ModeMsg      ctermbg=NONE ctermfg=144  cterm=NONE
 highlight MoreMsg      ctermbg=NONE ctermfg=244  cterm=bold
-highlight MsgArea      ctermbg=NONE ctermfg=231  cterm=NONE
+highlight MsgArea      ctermbg=NONE ctermfg=144  cterm=NONE
 highlight MsgSeparator ctermbg=NONE ctermfg=244  cterm=NONE
 highlight NonText      ctermbg=NONE ctermfg=144  cterm=bold
 highlight Normal       ctermbg=234  ctermfg=253  cterm=NONE
