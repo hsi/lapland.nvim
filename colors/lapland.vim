@@ -132,6 +132,9 @@ highlight! link SpecialComment Special
 highlight! link Debug          Special
 " }}}
 
+" COC
+highlight link CocHintSign Comment
+
 " Diff
 highlight! link diffAdded DiffAdd
 highlight! link diffRemoved DiffDelete
