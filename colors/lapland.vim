@@ -38,10 +38,10 @@ highlight MsgArea      ctermbg=NONE ctermfg=144  cterm=NONE
 highlight MsgSeparator ctermbg=NONE ctermfg=244  cterm=NONE
 highlight NonText      ctermbg=NONE ctermfg=144  cterm=bold
 highlight Normal       ctermbg=234  ctermfg=253  cterm=NONE
-highlight NormalFloat  ctermbg=235  ctermfg=231  cterm=NONE
-highlight Pmenu        ctermbg=235  ctermfg=244  cterm=NONE
-highlight PmenuSbar    ctermbg=235  ctermfg=NONE cterm=NONE
-highlight PmenuSel     ctermbg=235  ctermfg=229  cterm=NONE
+highlight NormalFloat  ctermbg=236  ctermfg=231  cterm=NONE
+highlight Pmenu        ctermbg=236  ctermfg=244  cterm=NONE
+highlight PmenuSbar    ctermbg=236  ctermfg=NONE cterm=NONE
+highlight PmenuSel     ctermbg=236  ctermfg=229  cterm=NONE
 highlight PmenuThumb   ctermbg=244  ctermfg=NONE cterm=NONE
 highlight Question     ctermbg=NONE ctermfg=231  cterm=bold
 highlight QuickFixLine ctermbg=NONE ctermfg=231  cterm=bold
