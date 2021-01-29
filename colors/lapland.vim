@@ -51,7 +51,7 @@ highlight SpecialKey   ctermbg=NONE ctermfg=229  cterm=bold
 highlight SpellBad     ctermbg=NONE ctermfg=160  cterm=underline
 highlight SpellLocal   ctermbg=NONE ctermfg=NONE cterm=underline
 highlight SpellRare    ctermbg=NONE ctermfg=202  cterm=underline
-highlight StatusLine   ctermbg=235  ctermfg=144  cterm=bold
+highlight StatusLine   ctermbg=NONE ctermfg=144  cterm=bold
 highlight StatusLineNC ctermbg=235  ctermfg=244  cterm=NONE
 highlight Substitute   ctermbg=46   ctermfg=234  cterm=bold
 highlight TabLine      ctermbg=235  ctermfg=244  cterm=NONE
