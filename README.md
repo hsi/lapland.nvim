@@ -22,4 +22,4 @@ Feel free to open an issue or send a pull request!
 
 License
 -------
-[MIT](https://en.wikipedia.org/wiki/MIT_License)
+[Apache-2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)
