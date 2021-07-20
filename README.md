@@ -1,5 +1,5 @@
 # lapland.vim
-A dark Neovim/Vim theme inspired by Lapland's fruits with easy to read code in mind.
+A dark Neovim theme inspired by Lapland's fruits with easy to read code in mind.
 
 Screenshot
 ----------
