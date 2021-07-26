@@ -8,42 +8,42 @@ local M = {}
 local palette = require('lapland.palette')
 
 local builtins = {
-    ColorColumn  = {                              background = palette.gray15,                         },
+    ColorColumn  = {                              background = palette.gray4,                          },
     Conceal      = { foreground = palette.white                                                        },
-    Cursor       = { foreground = palette.gray11, background = palette.green,                          },
+    Cursor       = { foreground = palette.gray3,  background = palette.green,                          },
     -- CursorIM link
     -- CursorColumn link
-    CursorLine   = {                              background = palette.gray15,                         },
+    CursorLine   = {                              background = palette.gray4,                          },
     Directory    = { foreground = palette.blue,                                attribute = 'bold'      },
     DiffAdd      = { foreground = palette.green,                                                       },
     -- DiffChange link
     DiffDelete   = { foreground = palette.red,                                                         },
     -- DiffText link
-    EndOfBuffer  = { foreground = palette.gray35,                              attribute = 'bold'      },
+    EndOfBuffer  = { foreground = palette.gray9,                               attribute = 'bold'      },
     -- TermCursor link
-    TermCursorNC = { foreground = palette.gray11, background = palette.gray50,                         },
+    TermCursorNC = { foreground = palette.gray3,  background = palette.gray13,                         },
     ErrorMsg     = { foreground = palette.white,  background = palette.red,    attribute = 'bold'      },
-    VertSplit    = { foreground = palette.gray50,                                                      },
+    VertSplit    = { foreground = palette.gray13,                                                      },
     Folded       = { foreground = palette.blue,                                attribute = 'bold'      },
-    FoldColumn   = { foreground = palette.gray50,                                                      },
+    FoldColumn   = { foreground = palette.gray13,                                                      },
     SignColumn   = {                                                           attribute = 'bold'      },
     -- IncSearch link
-    Substitute   = { foreground = palette.gray11, background = palette.green,  attribute = 'bold'      },
-    LineNr       = { foreground = palette.gray35,                                                      },
-    CursorLineNr = { foreground = palette.gold,   background = palette.gray15,                         },
-    MatchParen   = { foreground = palette.white,  background = palette.gray35, attribute = 'bold'      },
+    Substitute   = { foreground = palette.gray3,  background = palette.green,  attribute = 'bold'      },
+    LineNr       = { foreground = palette.gray9,                                                       },
+    CursorLineNr = { foreground = palette.gold,   background = palette.gray4,                          },
+    MatchParen   = { foreground = palette.white,  background = palette.gray9,  attribute = 'bold'      },
     ModeMsg      = { foreground = palette.gold,                                                        },
     MsgArea      = { foreground = palette.gold,                                                        },
-    MsgSeparator = { foreground = palette.gray50,                                                      },
-    MoreMsg      = { foreground = palette.gray50,                              attribute = 'bold'      },
+    MsgSeparator = { foreground = palette.gray13,                                                      },
+    MoreMsg      = { foreground = palette.gray13,                              attribute = 'bold'      },
     NonText      = { foreground = palette.gold,                                attribute = 'bold'      },
-    Normal       = { foreground = palette.gray85, background = palette.gray11,                         },
-    NormalFloat  = { foreground = palette.white,  background = palette.gray7,                          },
+    Normal       = { foreground = palette.gray22, background = palette.gray3,                          },
+    NormalFloat  = { foreground = palette.white,  background = palette.gray2,                          },
     -- NormalNC link
-    Pmenu        = { foreground = palette.gray50, background = palette.gray7,                          },
-    PmenuSel     = { foreground = palette.yellow, background = palette.gray7,                          },
-    PmenuSbar    = {                              background = palette.gray7,                          },
-    PmenuThumb   = {                              background = palette.gray50,                         },
+    Pmenu        = { foreground = palette.gray13, background = palette.gray2,                          },
+    PmenuSel     = { foreground = palette.yellow, background = palette.gray2,                          },
+    PmenuSbar    = {                              background = palette.gray2,                          },
+    PmenuThumb   = {                              background = palette.gray13,                         },
     Question     = { foreground = palette.white,                               attribute = 'bold'      },
     QuickFixLine = { foreground = palette.white,                               attribute = 'bold'      },
     Search       = { foreground = palette.white,  background = palette.purple,                         },
@@ -53,10 +53,10 @@ local builtins = {
     SpellLocal   = {                                                           attribute = 'underline' },
     SpellRare    = { foreground = palette.orange,                              attribute = 'underline' },
     StatusLine   = { foreground = palette.gold,                                attribute = 'bold'      },
-    StatusLineNC = { foreground = palette.gray50, background = palette.gray15,                         },
-    TabLine      = { foreground = palette.gray50, background = palette.gray15,                         },
-    TabLineFill  = {                              background = palette.gray11,                         },
-    TabLineSel   = { foreground = palette.gold,   background = palette.gray15,                         },
+    StatusLineNC = { foreground = palette.gray13, background = palette.gray4,                          },
+    TabLine      = { foreground = palette.gray13, background = palette.gray4,                          },
+    TabLineFill  = {                              background = palette.gray3,                          },
+    TabLineSel   = { foreground = palette.gold,   background = palette.gray4,                          },
     Title        = { foreground = palette.blue,                                attribute = 'bold'      },
     Visual       = { foreground = palette.yellow, background = palette.purple, attribute = 'bold'      },
     -- VisualNOS link
@@ -78,7 +78,7 @@ local builtin_links = {
 }
 
 local generals = {
-    Comment     = { foreground = palette.gray35,                                                       },
+    Comment     = { foreground = palette.gray9,                                                        },
     --
     Constant    = { foreground = palette.maroon,                                                       },
     String      = { foreground = palette.seagreen,                                                     },
@@ -100,11 +100,11 @@ local generals = {
     --
     Underlined  = {                                                            attribute = 'underline' },
     --
-    Ignore      = { foreground = palette.gray3,    background = palette.white,                         },
+    Ignore      = { foreground = palette.gray1,    background = palette.white,                         },
     --
     Error       = { foreground = palette.white,    background = palette.red,   attribute = 'bold'      },
     --
-    Todo        = { foreground = palette.gray11,   background = palette.white, attribute = 'bold'      },
+    Todo        = { foreground = palette.gray3,    background = palette.white, attribute = 'bold'      },
 }
 
 local general_links = {
