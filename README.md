@@ -3,17 +3,17 @@ A dark Neovim theme inspired by Lapland's fruits with easy to read code in mind.
 
 Screenshot
 ----------
-![Screenshot](./screenshot.png)
+![Screenshot](https://user-images.githubusercontent.com/53867065/127394933-5101e041-9993-4bee-b41e-9150e377739b.png)
 
 Color Palette
 -------------
-![Color Palette](./color-palette.png)
+![Color Palette](https://user-images.githubusercontent.com/53867065/127393382-e5346b5f-c83d-4429-b09e-05eabad93749.png)
 
 Features
 --------
 * Easy to read: more important elements have higher contrast, others are kept in the background.
 * Using pleasing colors to the eye.
-* Based on palette with 16 colors.
+* Based on palette with 18 colors.
 * Small and fast code.
 
 Want to help?
