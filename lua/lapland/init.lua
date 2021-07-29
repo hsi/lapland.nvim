@@ -53,7 +53,7 @@ local builtins = {
     SpellLocal   = { attribute = 'underline', },
     SpellRare    = { foreground = palette.vivid_orange, attribute = 'underline', },
     StatusLine   = { foreground = palette.daddy_o, attribute = 'bold', },
-    StatusLineNC = { foreground = palette.gray13, background = palette.gray4, },
+    StatusLineNC = { foreground = palette.gray13, attribute = 'bold', },
     TabLine      = { foreground = palette.gray13, background = palette.gray4, },
     TabLineFill  = { background = palette.gray3, },
     TabLineSel   = { foreground = palette.daddy_o, background = palette.gray4, },
