@@ -163,9 +163,15 @@ end
 
 
 local function highlight(group_name, foreground_color, background_color, attribute)
-    local foreground_color = foreground_color and 'ctermfg=' .. foreground_color.terminal or 'ctermfg=NONE'
-    local background_color = background_color and 'ctermbg=' .. background_color.terminal or 'ctermbg=NONE'
-    local attribute = attribute and 'cterm=' .. attribute or 'cterm=NONE'
+    local foreground_color = foreground_color and
+        'ctermfg=' .. foreground_color.terminal .. ' ' .. 'guifg=' .. foreground_color.graphical or
+        'ctermfg=NONE guifg=NONE'
+    local background_color = background_color and
+        'ctermbg=' .. background_color.terminal .. ' ' .. 'guibg=' .. background_color.graphical or
+        'ctermbg=NONE guibg=NONE'
+    local attribute = attribute and
+        'cterm=' .. attribute .. ' ' .. 'gui=' .. attribute or
+        'cterm=NONE gui=NONE'
 
     vim.cmd(
         'highlight ' .. group_name .. ' ' ..
