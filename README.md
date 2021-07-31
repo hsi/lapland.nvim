@@ -16,6 +16,14 @@ Features
 * Based on palette with 18 colors.
 * Small and fast code.
 
+## Installation
+### Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
+```lua
+-- Lua
+use 'hsi/lapland.nvim'
+```
+
+
 Want to help?
 -------------
 Feel free to open an issue or send a pull request!
