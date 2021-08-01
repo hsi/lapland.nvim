@@ -14,29 +14,29 @@ local builtins = {
     -- CursorIM link
     -- CursorColumn link
     CursorLine   = { background = palette.gray4, },
-    Directory    = { foreground = palette.krishna_blue, attribute = 'bold', },
+    Directory    = { foreground = palette.krishna_blue, attributes = { 'bold' }, },
     DiffAdd      = { foreground = palette.green, },
     -- DiffChange link
     DiffDelete   = { foreground = palette.rosso_corsa, },
     -- DiffText link
-    EndOfBuffer  = { foreground = palette.gray9, attribute = 'bold', },
+    EndOfBuffer  = { foreground = palette.gray9, attributes = { 'bold' }, },
     -- TermCursor link
     TermCursorNC = { foreground = palette.gray3, background = palette.gray13, },
-    ErrorMsg     = { foreground = palette.white, background = palette.rosso_corsa, attribute = 'bold', },
+    ErrorMsg     = { foreground = palette.white, background = palette.rosso_corsa, attributes = { 'bold' }, },
     VertSplit    = { foreground = palette.gray13, },
-    Folded       = { foreground = palette.krishna_blue, attribute = 'bold', },
+    Folded       = { foreground = palette.krishna_blue, attributes = { 'bold' }, },
     FoldColumn   = { foreground = palette.gray13, },
-    SignColumn   = { attribute = 'bold', },
+    SignColumn   = { attributes = { 'bold' }, },
     -- IncSearch link
-    Substitute   = { foreground = palette.gray3, background = palette.green, attribute = 'bold', },
+    Substitute   = { foreground = palette.gray3, background = palette.green, attributes = { 'bold' }, },
     LineNr       = { foreground = palette.gray9, },
     CursorLineNr = { foreground = palette.daddy_o, background = palette.gray4, },
-    MatchParen   = { foreground = palette.white, background = palette.gray9, attribute = 'bold', },
+    MatchParen   = { foreground = palette.white, background = palette.gray9, attributes = { 'bold' }, },
     ModeMsg      = { foreground = palette.daddy_o, },
     MsgArea      = { foreground = palette.daddy_o, },
     MsgSeparator = { foreground = palette.gray13, },
-    MoreMsg      = { foreground = palette.gray13, attribute = 'bold', },
-    NonText      = { foreground = palette.daddy_o, attribute = 'bold', },
+    MoreMsg      = { foreground = palette.gray13, attributes = { 'bold' }, },
+    NonText      = { foreground = palette.daddy_o, attributes = { 'bold' }, },
     Normal       = { foreground = palette.gray22, background = palette.gray3, },
     NormalFloat  = { foreground = palette.white, background = palette.gray2, },
     -- NormalNC link
@@ -44,21 +44,21 @@ local builtins = {
     PmenuSel     = { foreground = palette.vic_20_creme, background = palette.gray2, },
     PmenuSbar    = { background = palette.gray2, },
     PmenuThumb   = { background = palette.gray13, },
-    Question     = { foreground = palette.white, attribute = 'bold', },
-    QuickFixLine = { foreground = palette.white, attribute = 'bold', },
+    Question     = { foreground = palette.white, attributes = { 'bold' }, },
+    QuickFixLine = { foreground = palette.white, attributes = { 'bold' }, },
     Search       = { foreground = palette.white, background = palette.purple_climax, },
-    SpecialKey   = { foreground = palette.vic_20_creme, attribute = 'bold', },
-    SpellBad     = { foreground = palette.rosso_corsa, attribute = 'underline', },
+    SpecialKey   = { foreground = palette.vic_20_creme, attributes = { 'bold' }, },
+    SpellBad     = { foreground = palette.rosso_corsa, attributes = { 'underline' }, },
     -- SpellCap link
-    SpellLocal   = { attribute = 'underline', },
-    SpellRare    = { foreground = palette.vivid_orange, attribute = 'underline', },
-    StatusLine   = { foreground = palette.daddy_o, attribute = 'bold', },
-    StatusLineNC = { foreground = palette.gray13, attribute = 'bold', },
+    SpellLocal   = { attributes = { 'underline' }, },
+    SpellRare    = { foreground = palette.vivid_orange, attributes = { 'underline' }, },
+    StatusLine   = { foreground = palette.daddy_o, attributes = { 'bold' }, },
+    StatusLineNC = { foreground = palette.gray13, attributes = { 'bold' }, },
     TabLine      = { foreground = palette.gray13, background = palette.gray4, },
     TabLineFill  = { background = palette.gray3, },
     TabLineSel   = { foreground = palette.daddy_o, background = palette.gray4, },
-    Title        = { foreground = palette.krishna_blue, attribute = 'bold', },
-    Visual       = { foreground = palette.vic_20_creme, background = palette.purple_climax, attribute = 'bold', },
+    Title        = { foreground = palette.krishna_blue, attributes = { 'bold' }, },
+    Visual       = { foreground = palette.vic_20_creme, background = palette.purple_climax, attributes = { 'bold' }, },
     -- VisualNOS link
     WarningMsg   = { foreground = palette.vivid_orange, },
     Whitespace   = { foreground = palette.white, background = palette.rosso_corsa, },
@@ -87,24 +87,24 @@ local generals = {
     Identifier  = { foreground = palette.ice_cold_stare, },
     --
     Statement   = { foreground = palette.vic_20_creme, },
-    Conditional = { foreground = palette.vic_20_creme, attribute = 'bold', },
-    Repeat      = { foreground = palette.vic_20_creme, attribute = 'bold', },
+    Conditional = { foreground = palette.vic_20_creme, attributes = { 'bold' }, },
+    Repeat      = { foreground = palette.vic_20_creme, attributes = { 'bold' }, },
     Operator    = { foreground = palette.krishna_blue, },
-    Exception   = { foreground = palette.vic_20_creme, attribute = 'bold', },
+    Exception   = { foreground = palette.vic_20_creme, attributes = { 'bold' }, },
     --
     PreProc     = { foreground = palette.krishna_blue, },
     --
-    Type        = { foreground = palette.krishna_blue, attribute = 'bold', },
+    Type        = { foreground = palette.krishna_blue, attributes = { 'bold' }, },
     --
     Special     = { foreground = palette.white, },
     --
-    Underlined  = { attribute = 'underline', },
+    Underlined  = { attributes = { 'underline' }, },
     --
     Ignore      = { foreground = palette.gray1, background = palette.white, },
     --
-    Error       = { foreground = palette.white, background = palette.rosso_corsa, attribute = 'bold', },
+    Error       = { foreground = palette.white, background = palette.rosso_corsa, attributes = { 'bold' }, },
     --
-    Todo        = { foreground = palette.gray3, background = palette.white, attribute = 'bold', },
+    Todo        = { foreground = palette.gray3, background = palette.white, attributes = { 'bold' }, },
 }
 
 local general_links = {
@@ -162,22 +162,27 @@ local function initialize()
 end
 
 
-local function highlight(group_name, foreground_color, background_color, attribute)
+local function highlight(group_name, foreground_color, background_color, attributes)
     local foreground_color = foreground_color and
         'ctermfg=' .. foreground_color.terminal .. ' ' .. 'guifg=' .. foreground_color.graphical or
         'ctermfg=NONE guifg=NONE'
+
     local background_color = background_color and
         'ctermbg=' .. background_color.terminal .. ' ' .. 'guibg=' .. background_color.graphical or
         'ctermbg=NONE guibg=NONE'
-    local attribute = attribute and
-        'cterm=' .. attribute .. ' ' .. 'gui=' .. attribute or
-        'cterm=NONE gui=NONE'
+
+    if attributes then
+        local concatenated_attributes = table.concat(attributes, ',')
+        attributes = 'cterm=' .. concatenated_attributes .. ' ' .. 'gui=' .. concatenated_attributes
+    else
+        attributes = 'cterm=NONE gui=NONE'
+    end
 
     vim.cmd(
         'highlight ' .. group_name .. ' ' ..
         foreground_color .. ' ' ..
         background_color .. ' ' ..
-        attribute
+        attributes
     )
 end
 
@@ -191,7 +196,7 @@ function M.setup()
     initialize()
 
     for group_name, properties in pairs(builtins) do
-        highlight(group_name, properties.foreground, properties.background, properties.attribute)
+        highlight(group_name, properties.foreground, properties.background, properties.attributes)
     end
 
     for source, target in pairs(builtin_links) do
@@ -199,7 +204,7 @@ function M.setup()
     end
 
     for group_name, properties in pairs(generals) do
-        highlight(group_name, properties.foreground, properties.background, properties.attribute)
+        highlight(group_name, properties.foreground, properties.background, properties.attributes)
     end
 
     for source, target in pairs(general_links) do
