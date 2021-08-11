@@ -8,61 +8,61 @@ local M = {}
 local palette = require('lapland.palette')
 
 local builtins = {
-    ColorColumn  = { background = palette.gray4, },
-    Conceal      = { foreground = palette.white, },
-    Cursor       = { foreground = palette.gray3, background = palette.green, },
+    ColorColumn  = { background = palette.active, },
+    Conceal      = { foreground = palette.bright, },
+    Cursor       = { foreground = palette.dark, background = palette.added, },
     -- CursorIM link
     -- CursorColumn link
-    CursorLine   = { background = palette.gray4, },
-    Directory    = { foreground = palette.krishna_blue, attributes = { 'bold' }, },
-    DiffAdd      = { foreground = palette.green, },
+    CursorLine   = { background = palette.active, },
+    Directory    = { foreground = palette.type, attributes = { 'bold' }, },
+    DiffAdd      = { foreground = palette.added, },
     -- DiffChange link
-    DiffDelete   = { foreground = palette.rosso_corsa, },
+    DiffDelete   = { foreground = palette.deleted, },
     -- DiffText link
-    EndOfBuffer  = { foreground = palette.gray9, attributes = { 'bold' }, },
+    EndOfBuffer  = { foreground = palette.suppressed, attributes = { 'bold' }, },
     -- TermCursor link
-    TermCursorNC = { foreground = palette.gray3, background = palette.gray13, },
-    ErrorMsg     = { foreground = palette.white, background = palette.rosso_corsa, attributes = { 'bold' }, },
-    VertSplit    = { foreground = palette.gray13, },
-    Folded       = { foreground = palette.krishna_blue, attributes = { 'bold' }, },
-    FoldColumn   = { foreground = palette.gray13, },
+    TermCursorNC = { foreground = palette.dark, background = palette.hint, },
+    ErrorMsg     = { foreground = palette.bright, background = palette.deleted, attributes = { 'bold' }, },
+    VertSplit    = { foreground = palette.hint, },
+    Folded       = { foreground = palette.type, attributes = { 'bold' }, },
+    FoldColumn   = { foreground = palette.hint, },
     SignColumn   = { attributes = { 'bold' }, },
     -- IncSearch link
-    Substitute   = { foreground = palette.gray3, background = palette.green, attributes = { 'bold' }, },
-    LineNr       = { foreground = palette.gray9, },
-    CursorLineNr = { foreground = palette.daddy_o, background = palette.gray4, },
-    MatchParen   = { foreground = palette.white, background = palette.gray9, attributes = { 'bold' }, },
-    ModeMsg      = { foreground = palette.daddy_o, },
-    MsgArea      = { foreground = palette.daddy_o, },
-    MsgSeparator = { foreground = palette.gray13, },
-    MoreMsg      = { foreground = palette.gray13, attributes = { 'bold' }, },
-    NonText      = { foreground = palette.daddy_o, attributes = { 'bold' }, },
-    Normal       = { foreground = palette.gray22, background = palette.gray3, },
-    NormalFloat  = { foreground = palette.white, background = palette.gray2, },
+    Substitute   = { foreground = palette.dark, background = palette.added, attributes = { 'bold' }, },
+    LineNr       = { foreground = palette.suppressed, },
+    CursorLineNr = { foreground = palette.status, background = palette.active, },
+    MatchParen   = { foreground = palette.bright, background = palette.suppressed, attributes = { 'bold' }, },
+    ModeMsg      = { foreground = palette.status, },
+    MsgArea      = { foreground = palette.status, },
+    MsgSeparator = { foreground = palette.hint, },
+    MoreMsg      = { foreground = palette.hint, attributes = { 'bold' }, },
+    NonText      = { foreground = palette.status, attributes = { 'bold' }, },
+    Normal       = { foreground = palette.light, background = palette.dark, },
+    NormalFloat  = { foreground = palette.bright, background = palette.menu, },
     -- NormalNC link
-    Pmenu        = { foreground = palette.gray13, background = palette.gray2, },
-    PmenuSel     = { foreground = palette.vic_20_creme, background = palette.gray2, },
-    PmenuSbar    = { background = palette.gray2, },
-    PmenuThumb   = { background = palette.gray13, },
-    Question     = { foreground = palette.white, attributes = { 'bold' }, },
-    QuickFixLine = { foreground = palette.white, attributes = { 'bold' }, },
-    Search       = { foreground = palette.white, background = palette.purple_climax, },
-    SpecialKey   = { foreground = palette.vic_20_creme, attributes = { 'bold' }, },
-    SpellBad     = { foreground = palette.rosso_corsa, attributes = { 'underline' }, },
+    Pmenu        = { foreground = palette.hint, background = palette.menu, },
+    PmenuSel     = { foreground = palette.keyword, background = palette.menu, },
+    PmenuSbar    = { background = palette.menu, },
+    PmenuThumb   = { background = palette.hint, },
+    Question     = { foreground = palette.bright, attributes = { 'bold' }, },
+    QuickFixLine = { foreground = palette.bright, attributes = { 'bold' }, },
+    Search       = { foreground = palette.bright, background = palette.marked, },
+    SpecialKey   = { foreground = palette.keyword, attributes = { 'bold' }, },
+    SpellBad     = { foreground = palette.deleted, attributes = { 'underline' }, },
     -- SpellCap link
     SpellLocal   = { attributes = { 'underline' }, },
-    SpellRare    = { foreground = palette.vivid_orange, attributes = { 'underline' }, },
-    StatusLine   = { foreground = palette.daddy_o, attributes = { 'bold' }, },
-    StatusLineNC = { foreground = palette.gray13, attributes = { 'bold' }, },
-    TabLine      = { foreground = palette.gray13, background = palette.gray4, },
-    TabLineFill  = { background = palette.gray3, },
-    TabLineSel   = { foreground = palette.daddy_o, background = palette.gray4, },
-    Title        = { foreground = palette.krishna_blue, attributes = { 'bold' }, },
-    Visual       = { foreground = palette.vic_20_creme, background = palette.purple_climax, attributes = { 'bold' }, },
+    SpellRare    = { foreground = palette.warning, attributes = { 'underline' }, },
+    StatusLine   = { foreground = palette.status, attributes = { 'bold' }, },
+    StatusLineNC = { foreground = palette.hint, attributes = { 'bold' }, },
+    TabLine      = { foreground = palette.hint, background = palette.active, },
+    TabLineFill  = { background = palette.dark, },
+    TabLineSel   = { foreground = palette.status, background = palette.active, },
+    Title        = { foreground = palette.type, attributes = { 'bold' }, },
+    Visual       = { foreground = palette.keyword, background = palette.marked, attributes = { 'bold' }, },
     -- VisualNOS link
-    WarningMsg   = { foreground = palette.vivid_orange, },
-    Whitespace   = { foreground = palette.white, background = palette.rosso_corsa, },
-    WildMenu     = { foreground = palette.vic_20_creme, },
+    WarningMsg   = { foreground = palette.warning, },
+    Whitespace   = { foreground = palette.bright, background = palette.deleted, },
+    WildMenu     = { foreground = palette.keyword, },
 }
 
 local builtin_links = {
@@ -78,33 +78,33 @@ local builtin_links = {
 }
 
 local generals = {
-    Comment     = { foreground = palette.gray9, },
+    Comment     = { foreground = palette.suppressed, },
     --
-    Constant    = { foreground = palette.fancy_fuchsia, },
-    String      = { foreground = palette.hobgoblin, },
-    Character   = { foreground = palette.green, },
+    Constant    = { foreground = palette.constant, },
+    String      = { foreground = palette.string, },
+    Character   = { foreground = palette.added, },
     --
-    Identifier  = { foreground = palette.ice_cold_stare, },
+    Identifier  = { foreground = palette.identifier, },
     --
-    Statement   = { foreground = palette.vic_20_creme, },
-    Conditional = { foreground = palette.vic_20_creme, attributes = { 'bold' }, },
-    Repeat      = { foreground = palette.vic_20_creme, attributes = { 'bold' }, },
-    Operator    = { foreground = palette.krishna_blue, },
-    Exception   = { foreground = palette.vic_20_creme, attributes = { 'bold' }, },
+    Statement   = { foreground = palette.keyword, },
+    Conditional = { foreground = palette.keyword, attributes = { 'bold' }, },
+    Repeat      = { foreground = palette.keyword, attributes = { 'bold' }, },
+    Operator    = { foreground = palette.type, },
+    Exception   = { foreground = palette.keyword, attributes = { 'bold' }, },
     --
-    PreProc     = { foreground = palette.krishna_blue, },
+    PreProc     = { foreground = palette.type, },
     --
-    Type        = { foreground = palette.krishna_blue, attributes = { 'bold' }, },
+    Type        = { foreground = palette.type, attributes = { 'bold' }, },
     --
-    Special     = { foreground = palette.white, },
+    Special     = { foreground = palette.bright, },
     --
     Underlined  = { attributes = { 'underline' }, },
     --
-    Ignore      = { foreground = palette.gray1, background = palette.white, },
+    Ignore      = { foreground = palette.ignored, background = palette.bright, },
     --
-    Error       = { foreground = palette.white, background = palette.rosso_corsa, attributes = { 'bold' }, },
+    Error       = { foreground = palette.bright, background = palette.deleted, attributes = { 'bold' }, },
     --
-    Todo        = { foreground = palette.gray3, background = palette.white, attributes = { 'bold' }, },
+    Todo        = { foreground = palette.dark, background = palette.bright, attributes = { 'bold' }, },
 }
 
 local general_links = {
