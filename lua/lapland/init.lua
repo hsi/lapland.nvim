@@ -54,9 +54,9 @@ local builtins = {
     SpellRare    = { foreground = palette.warning, attributes = { 'underline' }, },
     StatusLine   = { foreground = palette.status, attributes = { 'bold' }, },
     StatusLineNC = { foreground = palette.hint, attributes = { 'bold' }, },
-    TabLine      = { foreground = palette.hint, background = palette.active, },
+    TabLine      = { foreground = palette.suppressed, },
     TabLineFill  = { background = palette.dark, },
-    TabLineSel   = { foreground = palette.status, background = palette.active, },
+    TabLineSel   = { foreground = palette.status, },
     Title        = { foreground = palette.type, attributes = { 'bold' }, },
     Visual       = { foreground = palette.keyword, background = palette.marked, attributes = { 'bold' }, },
     -- VisualNOS link
