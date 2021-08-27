@@ -36,7 +36,7 @@ local builtins = {
     MsgArea      = { foreground = palette.status, },
     MsgSeparator = { foreground = palette.hint, },
     MoreMsg      = { foreground = palette.hint, attributes = { 'bold' }, },
-    NonText      = { foreground = palette.status, attributes = { 'bold' }, },
+    NonText      = { foreground = palette.suppressed, },
     Normal       = { foreground = palette.light, background = palette.dark, },
     NormalFloat  = { foreground = palette.bright, background = palette.menu, },
     -- NormalNC link
