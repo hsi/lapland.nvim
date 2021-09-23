@@ -46,7 +46,7 @@ local builtins = {
     PmenuThumb   = { background = palette.hint, },
     Question     = { foreground = palette.bright, attributes = { 'bold' }, },
     QuickFixLine = { foreground = palette.bright, attributes = { 'bold' }, },
-    Search       = { foreground = palette.bright, background = palette.marked, },
+    Search       = { foreground = palette.keyword, background = palette.marked, attributes = { 'bold' }, },
     SpecialKey   = { foreground = palette.keyword, attributes = { 'bold' }, },
     SpellBad     = { foreground = palette.deleted, attributes = { 'underline' }, },
     -- SpellCap link
@@ -58,7 +58,7 @@ local builtins = {
     TabLineFill  = { background = palette.dark, },
     TabLineSel   = { foreground = palette.status, },
     Title        = { foreground = palette.type, attributes = { 'bold' }, },
-    Visual       = { foreground = palette.keyword, background = palette.marked, attributes = { 'bold' }, },
+    Visual       = { background = palette.marked, },
     -- VisualNOS link
     WarningMsg   = { foreground = palette.warning, },
     Whitespace   = { foreground = palette.bright, background = palette.deleted, },
