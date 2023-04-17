@@ -14,7 +14,7 @@ Features
 * Easy to read: more important elements have higher contrast, others are kept in the background.
 * Using pleasing colors to the eye.
 * Based on palette with 18 colors.
-* Small and fast code.
+* 100% Lua code (requires Neovim v0.5.0 or higher).
 
 ## Installation
 ### Using [packer.nvim](https://github.com/wbthomason/packer.nvim)

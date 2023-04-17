@@ -193,6 +193,10 @@ end
 
 
 function M.setup()
+    if not vim.version or vim.version().api_level < 7 then
+        return
+    end
+
     initialize()
 
     for group_name, properties in pairs(builtins) do
