@@ -1,24 +1,24 @@
 local colors = require('lapland.colors')
 
 local palette = {
-    light      = colors.gray22,
+    -- "Snow" palette
     dark       = colors.gray3,
-    active     = colors.gray4,
-    menu       = colors.gray2,
-    suppressed = colors.gray9,
-    bright     = colors.white,
-    keyword    = colors.vic_20_creme,
-    type       = colors.krishna_blue,
-    identifier = colors.ice_cold_stare,
-    string     = colors.hobgoblin,
-    constant   = colors.fancy_fuchsia,
-    status     = colors.daddy_o,
-    warning    = colors.vivid_orange,
-    marked     = colors.purple_climax,
+    darker     = colors.gray2,
     ignored    = colors.gray1,
-    added      = colors.green,
-    deleted    = colors.rosso_corsa,
+    bright     = colors.white,
+    light      = colors.gray22,
     hint       = colors.gray13,
+    suppressed = colors.gray9,
+    active     = colors.gray4,
+    -- "Fruit" palette
+    red        = colors.fancy_fuchsia,
+    orange     = colors.vivid_orange,
+    purple     = colors.purple_climax,
+    darkyellow = colors.daddy_o,
+    yellow     = colors.vic_20_creme,
+    green      = colors.hobgoblin,
+    blue       = colors.krishna_blue,
+    lightblue  = colors.ice_cold_stare,
 }
 
 return palette

@@ -10,59 +10,59 @@ local palette = require('lapland.palette')
 local builtins = {
     ColorColumn  = { background = palette.active, },
     Conceal      = { foreground = palette.bright, },
-    Cursor       = { foreground = palette.dark, background = palette.added, },
+    Cursor       = { foreground = palette.dark, background = palette.green, },
     -- CursorIM link
     -- CursorColumn link
     CursorLine   = { background = palette.active, },
-    Directory    = { foreground = palette.type, attributes = { 'bold' }, },
-    DiffAdd      = { foreground = palette.added, },
+    Directory    = { foreground = palette.blue, attributes = { 'bold' }, },
+    DiffAdd      = { foreground = palette.green, },
     -- DiffChange link
-    DiffDelete   = { foreground = palette.deleted, },
+    DiffDelete   = { foreground = palette.red, },
     -- DiffText link
     EndOfBuffer  = { foreground = palette.suppressed, attributes = { 'bold' }, },
     -- TermCursor link
     TermCursorNC = { foreground = palette.dark, background = palette.hint, },
-    ErrorMsg     = { foreground = palette.bright, background = palette.deleted, attributes = { 'bold' }, },
+    ErrorMsg     = { foreground = palette.bright, background = palette.red, attributes = { 'bold' }, },
     VertSplit    = { foreground = palette.hint, },
-    Folded       = { foreground = palette.type, attributes = { 'bold' }, },
+    Folded       = { foreground = palette.blue, attributes = { 'bold' }, },
     FoldColumn   = { foreground = palette.hint, },
     SignColumn   = { attributes = { 'bold' }, },
     -- IncSearch link
-    Substitute   = { foreground = palette.dark, background = palette.added, attributes = { 'bold' }, },
+    Substitute   = { foreground = palette.dark, background = palette.green, attributes = { 'bold' }, },
     LineNr       = { foreground = palette.suppressed, },
-    CursorLineNr = { foreground = palette.status, background = palette.active, },
+    CursorLineNr = { foreground = palette.darkyellow, background = palette.active, },
     MatchParen   = { foreground = palette.bright, background = palette.suppressed, attributes = { 'bold' }, },
-    ModeMsg      = { foreground = palette.status, },
-    MsgArea      = { foreground = palette.status, },
+    ModeMsg      = { foreground = palette.darkyellow, },
+    MsgArea      = { foreground = palette.darkyellow, },
     MsgSeparator = { foreground = palette.hint, },
     MoreMsg      = { foreground = palette.hint, attributes = { 'bold' }, },
     NonText      = { foreground = palette.suppressed, },
     Normal       = { foreground = palette.light, background = palette.dark, },
-    NormalFloat  = { foreground = palette.bright, background = palette.menu, },
+    NormalFloat  = { foreground = palette.bright, background = palette.darker, },
     -- NormalNC link
-    Pmenu        = { foreground = palette.hint, background = palette.menu, },
-    PmenuSel     = { foreground = palette.keyword, background = palette.menu, },
-    PmenuSbar    = { background = palette.menu, },
+    Pmenu        = { foreground = palette.hint, background = palette.darker, },
+    PmenuSel     = { foreground = palette.yellow, background = palette.darker, },
+    PmenuSbar    = { background = palette.darker, },
     PmenuThumb   = { background = palette.hint, },
     Question     = { foreground = palette.bright, attributes = { 'bold' }, },
     QuickFixLine = { foreground = palette.bright, attributes = { 'bold' }, },
-    Search       = { foreground = palette.keyword, background = palette.marked, attributes = { 'bold' }, },
-    SpecialKey   = { foreground = palette.keyword, attributes = { 'bold' }, },
-    SpellBad     = { foreground = palette.deleted, attributes = { 'underline' }, },
+    Search       = { foreground = palette.yellow, background = palette.purple, attributes = { 'bold' }, },
+    SpecialKey   = { foreground = palette.yellow, attributes = { 'bold' }, },
+    SpellBad     = { foreground = palette.red, attributes = { 'underline' }, },
     -- SpellCap link
     SpellLocal   = { attributes = { 'underline' }, },
-    SpellRare    = { foreground = palette.warning, attributes = { 'underline' }, },
-    StatusLine   = { foreground = palette.status, attributes = { 'bold' }, },
+    SpellRare    = { foreground = palette.orange, attributes = { 'underline' }, },
+    StatusLine   = { foreground = palette.darkyellow, attributes = { 'bold' }, },
     StatusLineNC = { foreground = palette.hint, attributes = { 'bold' }, },
     TabLine      = { foreground = palette.suppressed, },
     TabLineFill  = { background = palette.dark, },
-    TabLineSel   = { foreground = palette.status, },
-    Title        = { foreground = palette.type, attributes = { 'bold' }, },
-    Visual       = { background = palette.marked, },
+    TabLineSel   = { foreground = palette.darkyellow, },
+    Title        = { foreground = palette.blue, attributes = { 'bold' }, },
+    Visual       = { background = palette.purple, },
     -- VisualNOS link
-    WarningMsg   = { foreground = palette.warning, },
-    Whitespace   = { foreground = palette.bright, background = palette.deleted, },
-    WildMenu     = { foreground = palette.keyword, },
+    WarningMsg   = { foreground = palette.orange, },
+    Whitespace   = { foreground = palette.bright, background = palette.red, },
+    WildMenu     = { foreground = palette.yellow, },
 }
 
 local builtin_links = {
@@ -80,21 +80,21 @@ local builtin_links = {
 local generals = {
     Comment     = { foreground = palette.suppressed, },
     --
-    Constant    = { foreground = palette.constant, },
-    String      = { foreground = palette.string, },
-    Character   = { foreground = palette.added, },
+    Constant    = { foreground = palette.red, },
+    String      = { foreground = palette.green, },
+    Character   = { foreground = palette.green, },
     --
-    Identifier  = { foreground = palette.identifier, },
+    Identifier  = { foreground = palette.lightblue, },
     --
-    Statement   = { foreground = palette.keyword, },
-    Conditional = { foreground = palette.keyword, attributes = { 'bold' }, },
-    Repeat      = { foreground = palette.keyword, attributes = { 'bold' }, },
-    Operator    = { foreground = palette.type, },
-    Exception   = { foreground = palette.keyword, attributes = { 'bold' }, },
+    Statement   = { foreground = palette.yellow, },
+    Conditional = { foreground = palette.yellow, attributes = { 'bold' }, },
+    Repeat      = { foreground = palette.yellow, attributes = { 'bold' }, },
+    Operator    = { foreground = palette.blue, },
+    Exception   = { foreground = palette.yellow, attributes = { 'bold' }, },
     --
-    PreProc     = { foreground = palette.type, },
+    PreProc     = { foreground = palette.blue, },
     --
-    Type        = { foreground = palette.type, attributes = { 'bold' }, },
+    Type        = { foreground = palette.blue, attributes = { 'bold' }, },
     --
     Special     = { foreground = palette.bright, },
     --
@@ -102,7 +102,7 @@ local generals = {
     --
     Ignore      = { foreground = palette.ignored, background = palette.bright, },
     --
-    Error       = { foreground = palette.bright, background = palette.deleted, attributes = { 'bold' }, },
+    Error       = { foreground = palette.bright, background = palette.red, attributes = { 'bold' }, },
     --
     Todo        = { foreground = palette.dark, background = palette.bright, attributes = { 'bold' }, },
 }
