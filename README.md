@@ -3,11 +3,11 @@ A dark Neovim theme inspired by Lapland's fruits.
 
 ## Screenshot
 <div align="center">
-  <img src="./palette.svg" alt="Screenshot" width="90%">
+  ![Screenshot](https://user-images.githubusercontent.com/53867065/127394933-5101e041-9993-4bee-b41e-9150e377739b.png)
 </div>
 
 ## Color Palette
-![Color Palette](https://user-images.githubusercontent.com/53867065/127393382-e5346b5f-c83d-4429-b09e-05eabad93749.png)
+![Color Palette](./palette.svg)
 
 ## Features
 * Situation-aware contrast: an element that needs more focus at the moment gets higher contrast (e.g. a PopUp menu).
