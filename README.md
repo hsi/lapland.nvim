@@ -13,7 +13,7 @@ A dark Neovim theme inspired by Lapland's fruits.
 * Situation-aware contrast: an element that needs more focus at the moment gets higher contrast (e.g. a PopUp menu).
 * Uses pleasing colors to the eye.
 * Based on a small palette (just 16 colors).
-* 100% Lua code (requires Neovim v0.5.0 or higher).
+* 100% Lua code (requires Neovim v0.7.0 or higher).
 
 ## Installation
 ### Using [packer.nvim](https://github.com/wbthomason/packer.nvim)

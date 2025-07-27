@@ -187,13 +187,13 @@ local function highlight(group_name, foreground_color, background_color, attribu
 end
 
 
-local function highlight_link(source, target)
-    vim.cmd('highlight! link ' .. source .. ' ' .. target)
+local function highlight_link(from_group, to_group)
+    vim.api.nvim_set_hl(0, from_group, {link = to_group})
 end
 
 
 function M.setup()
-    if not vim.version or vim.version().api_level < 7 then
+    if not vim.version or vim.version().api_level < 9 then
         return
     end
 
@@ -203,20 +203,20 @@ function M.setup()
         highlight(group_name, properties.foreground, properties.background, properties.attributes)
     end
 
-    for source, target in pairs(builtin_links) do
-        highlight_link(source, target)
+    for from_group, to_group in pairs(builtin_links) do
+        highlight_link(from_group, to_group)
     end
 
     for group_name, properties in pairs(generals) do
         highlight(group_name, properties.foreground, properties.background, properties.attributes)
     end
 
-    for source, target in pairs(general_links) do
-        highlight_link(source, target)
+    for from_group, to_group in pairs(general_links) do
+        highlight_link(from_group, to_group)
     end
 
-    for source, target in pairs(links) do
-        highlight_link(source, target)
+    for from_group, to_group in pairs(links) do
+        highlight_link(from_group, to_group)
     end
 end
 
