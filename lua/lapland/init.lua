@@ -162,28 +162,26 @@ local function initialize()
 end
 
 
-local function highlight(group_name, foreground_color, background_color, attributes)
-    local foreground_color = foreground_color and
-        'ctermfg=' .. foreground_color.terminal .. ' ' .. 'guifg=' .. foreground_color.graphical or
-        'ctermfg=NONE guifg=NONE'
-
-    local background_color = background_color and
-        'ctermbg=' .. background_color.terminal .. ' ' .. 'guibg=' .. background_color.graphical or
-        'ctermbg=NONE guibg=NONE'
-
-    if attributes then
-        local concatenated_attributes = table.concat(attributes, ',')
-        attributes = 'cterm=' .. concatenated_attributes .. ' ' .. 'gui=' .. concatenated_attributes
-    else
-        attributes = 'cterm=NONE gui=NONE'
+local function has_value (table, value)
+    for _, v in ipairs(table) do
+        if v == value then
+            return true
+        end
     end
 
-    vim.cmd(
-        'highlight ' .. group_name .. ' ' ..
-        foreground_color .. ' ' ..
-        background_color .. ' ' ..
-        attributes
-    )
+    return false
+end
+
+
+local function highlight(group_name, foreground_color, background_color, attributes)
+    vim.api.nvim_set_hl(0, group_name, {
+        ctermfg = foreground_color and foreground_color.terminal or nil,
+        ctermbg = background_color and background_color.terminal or nil,
+        fg = foreground_color and foreground_color.graphical or nil,
+        bg = background_color and background_color.graphical or nil,
+        bold = attributes and has_value(attributes, 'bold'),
+        underline = attributes and has_value(attributes, 'underline'),
+    })
 end
 
 
