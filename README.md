@@ -16,22 +16,27 @@ A dark Neovim theme inspired by Lapland's fruits.
 * 100% Lua code (requires Neovim v0.7.0 or higher).
 
 ## Installation
-### Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
+### Using [lazy.nvim](https://github.com/folke/lazy.nvim)
 ```lua
--- Lua
-use 'hsi/lapland.nvim'
-```
-
-### Using [Dein.vim](https://github.com/Shougo/dein.vim)
-```vim
-" Vimscript
-call dein#add('hsi/lapland.nvim')
+-- lua/plugins/lapland.lua
+return {
+    'hsi/lapland.nvim'
+}
 ```
 
 ### Using [vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
-" Vimscript
 Plug 'hsi/lapland.nvim'
+```
+
+### Using [Dein.vim](https://github.com/Shougo/dein.vim)
+```vim
+call dein#add('hsi/lapland.nvim')
+```
+
+### Using [packer.nvim](https://github.com/wbthomason/packer.nvim)
+```lua
+use 'hsi/lapland.nvim'
 ```
 
 ## Want to help?
