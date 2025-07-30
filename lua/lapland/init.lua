@@ -14,28 +14,28 @@ local builtins = {
     -- CursorIM link
     -- CursorColumn link
     CursorLine   = { background = palette.active, },
-    Directory    = { foreground = palette.blue, attributes = { 'bold' }, },
+    Directory    = { foreground = palette.blue, attributes = { bold = true }, },
     DiffAdd      = { foreground = palette.green, },
     -- DiffChange link
     DiffDelete   = { foreground = palette.red, },
     -- DiffText link
-    EndOfBuffer  = { foreground = palette.suppressed, attributes = { 'bold' }, },
+    EndOfBuffer  = { foreground = palette.suppressed, attributes = { bold = true }, },
     -- TermCursor link
     TermCursorNC = { foreground = palette.dark, background = palette.hint, },
-    ErrorMsg     = { foreground = palette.bright, background = palette.red, attributes = { 'bold' }, },
+    ErrorMsg     = { foreground = palette.bright, background = palette.red, attributes = { bold = true }, },
     VertSplit    = { foreground = palette.hint, },
-    Folded       = { foreground = palette.blue, attributes = { 'bold' }, },
+    Folded       = { foreground = palette.blue, attributes = { bold = true }, },
     FoldColumn   = { foreground = palette.hint, },
-    SignColumn   = { attributes = { 'bold' }, },
+    SignColumn   = { attributes = { bold = true }, },
     -- IncSearch link
-    Substitute   = { foreground = palette.dark, background = palette.green, attributes = { 'bold' }, },
+    Substitute   = { foreground = palette.dark, background = palette.green, attributes = { bold = true }, },
     LineNr       = { foreground = palette.suppressed, },
     CursorLineNr = { foreground = palette.darkyellow, background = palette.active, },
-    MatchParen   = { foreground = palette.bright, background = palette.suppressed, attributes = { 'bold' }, },
+    MatchParen   = { foreground = palette.bright, background = palette.suppressed, attributes = { bold = true }, },
     ModeMsg      = { foreground = palette.darkyellow, },
     MsgArea      = { foreground = palette.darkyellow, },
     MsgSeparator = { foreground = palette.hint, },
-    MoreMsg      = { foreground = palette.hint, attributes = { 'bold' }, },
+    MoreMsg      = { foreground = palette.hint, attributes = { bold = true }, },
     NonText      = { foreground = palette.suppressed, },
     Normal       = { foreground = palette.light, background = palette.dark, },
     NormalFloat  = { foreground = palette.bright, background = palette.darker, },
@@ -44,20 +44,20 @@ local builtins = {
     PmenuSel     = { foreground = palette.yellow, background = palette.darker, },
     PmenuSbar    = { background = palette.darker, },
     PmenuThumb   = { background = palette.hint, },
-    Question     = { foreground = palette.bright, attributes = { 'bold' }, },
-    QuickFixLine = { foreground = palette.bright, attributes = { 'bold' }, },
-    Search       = { foreground = palette.yellow, background = palette.purple, attributes = { 'bold' }, },
-    SpecialKey   = { foreground = palette.yellow, attributes = { 'bold' }, },
-    SpellBad     = { foreground = palette.red, attributes = { 'underline' }, },
+    Question     = { foreground = palette.bright, attributes = { bold = true }, },
+    QuickFixLine = { foreground = palette.bright, attributes = { bold = true }, },
+    Search       = { foreground = palette.yellow, background = palette.purple, attributes = { bold = true }, },
+    SpecialKey   = { foreground = palette.yellow, attributes = { bold = true }, },
+    SpellBad     = { foreground = palette.red, attributes = { underline = true }, },
     -- SpellCap link
-    SpellLocal   = { attributes = { 'underline' }, },
-    SpellRare    = { foreground = palette.orange, attributes = { 'underline' }, },
-    StatusLine   = { foreground = palette.darkyellow, attributes = { 'bold' }, },
-    StatusLineNC = { foreground = palette.hint, attributes = { 'bold' }, },
+    SpellLocal   = { attributes = { underline = true }, },
+    SpellRare    = { foreground = palette.orange, attributes = { underline = true }, },
+    StatusLine   = { foreground = palette.darkyellow, attributes = { bold = true }, },
+    StatusLineNC = { foreground = palette.hint, attributes = { bold = true }, },
     TabLine      = { foreground = palette.suppressed, },
     TabLineFill  = { background = palette.dark, },
     TabLineSel   = { foreground = palette.darkyellow, },
-    Title        = { foreground = palette.blue, attributes = { 'bold' }, },
+    Title        = { foreground = palette.blue, attributes = { bold = true }, },
     Visual       = { background = palette.purple, },
     -- VisualNOS link
     WarningMsg   = { foreground = palette.orange, },
@@ -87,24 +87,24 @@ local generals = {
     Identifier  = { foreground = palette.lightblue, },
     --
     Statement   = { foreground = palette.yellow, },
-    Conditional = { foreground = palette.yellow, attributes = { 'bold' }, },
-    Repeat      = { foreground = palette.yellow, attributes = { 'bold' }, },
+    Conditional = { foreground = palette.yellow, attributes = { bold = true }, },
+    Repeat      = { foreground = palette.yellow, attributes = { bold = true }, },
     Operator    = { foreground = palette.blue, },
-    Exception   = { foreground = palette.yellow, attributes = { 'bold' }, },
+    Exception   = { foreground = palette.yellow, attributes = { bold = true }, },
     --
     PreProc     = { foreground = palette.blue, },
     --
-    Type        = { foreground = palette.blue, attributes = { 'bold' }, },
+    Type        = { foreground = palette.blue, attributes = { bold = true }, },
     --
     Special     = { foreground = palette.bright, },
     --
-    Underlined  = { attributes = { 'underline' }, },
+    Underlined  = { attributes = { underline = true }, },
     --
     Ignore      = { foreground = palette.ignored, background = palette.bright, },
     --
-    Error       = { foreground = palette.bright, background = palette.red, attributes = { 'bold' }, },
+    Error       = { foreground = palette.bright, background = palette.red, attributes = { bold = true }, },
     --
-    Todo        = { foreground = palette.dark, background = palette.bright, attributes = { 'bold' }, },
+    Todo        = { foreground = palette.dark, background = palette.bright, attributes = { bold = true }, },
 }
 
 local general_links = {
@@ -162,25 +162,14 @@ local function initialize()
 end
 
 
-local function has_value (table, value)
-    for _, v in ipairs(table) do
-        if v == value then
-            return true
-        end
-    end
-
-    return false
-end
-
-
 local function highlight(group_name, foreground_color, background_color, attributes)
     vim.api.nvim_set_hl(0, group_name, {
         ctermfg = foreground_color and foreground_color.terminal or nil,
         ctermbg = background_color and background_color.terminal or nil,
         fg = foreground_color and foreground_color.graphical or nil,
         bg = background_color and background_color.graphical or nil,
-        bold = attributes and has_value(attributes, 'bold'),
-        underline = attributes and has_value(attributes, 'underline'),
+        bold = attributes and attributes.bold,
+        underline = attributes and attributes.underline,
     })
 end
 
