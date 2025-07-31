@@ -133,25 +133,6 @@ local general_links = {
     Debug          = 'Special',
 }
 
-local links = {
-    -- Diff
-    diffAdded   = 'DiffAdd',
-    diffRemoved = 'DiffDelete',
-    diffChanged = 'Statement',
-    -- Git Commit
-    gitcommitBranch = 'Special',
-    gitcommitType   = 'Normal',
-    gitcommitHeader = 'Type',
-    gitcommitFile   = 'Identifier',
-    gitcommitArrow  = 'Operator',
-    -- XML
-    xmlTagName     = 'Type',
-    xmlEndTag      = 'Type',
-    xmlNamespace   = 'Identifier',
-    xmlAttribPunct = 'Operator',
-}
-
-
 local function initialize()
     vim.cmd('highlight clear')
     if vim.g.syntax_on == 1 then
@@ -199,10 +180,6 @@ function M.setup()
     end
 
     for from_group, to_group in pairs(general_links) do
-        highlight_link(from_group, to_group)
-    end
-
-    for from_group, to_group in pairs(links) do
         highlight_link(from_group, to_group)
     end
 end
