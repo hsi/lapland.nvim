@@ -134,10 +134,10 @@ local general_links = {
 }
 
 local function initialize()
-    vim.cmd('highlight clear')
-    if vim.g.syntax_on == 1 then
-        vim.cmd('syntax reset')
+    if vim.g.colors_name then
+        vim.cmd('highlight clear')
     end
+
     vim.o.background = 'dark'
     vim.g.colors_name = 'lapland'
 end
