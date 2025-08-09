@@ -24,6 +24,14 @@ return {
 }
 ```
 
+### Using [vim.pack](https://raw.githubusercontent.com/neovim/neovim/refs/heads/master/runtime/doc/pack.txt)
+```lua
+-- Requires Neovim 0.12 or later
+vim.pack.add({
+    'https://github.com/hsi/lapland.nvim'
+})
+```
+
 ### Using [vim-plug](https://github.com/junegunn/vim-plug)
 ```vim
 Plug 'hsi/lapland.nvim'
