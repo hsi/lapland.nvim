@@ -26,7 +26,7 @@ return {
 
 ### Using [vim.pack](https://raw.githubusercontent.com/neovim/neovim/refs/heads/master/runtime/doc/pack.txt)
 ```lua
--- Requires Neovim 0.12 or later
+-- Requires Neovim v0.12 or later Nightly for now
 vim.pack.add({
     'https://github.com/hsi/lapland.nvim'
 })
