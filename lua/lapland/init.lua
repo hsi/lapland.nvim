@@ -63,6 +63,7 @@ local builtins = {
     WarningMsg   = { foreground = palette.orange, },
     Whitespace   = { foreground = palette.bright, background = palette.red, },
     WildMenu     = { foreground = palette.yellow, },
+    WinSeparator = { foreground = palette.suppressed, }
 }
 
 local builtin_links = {
