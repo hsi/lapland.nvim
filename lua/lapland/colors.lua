@@ -14,7 +14,7 @@ local colors = {
     krishna_blue   = { terminal =  39, graphical = '#00afff' },
     purple_climax  = { terminal =  93, graphical = '#8700ff' },
     vic_20_creme   = { terminal = 229, graphical = '#ffffaf' },
-    vivid_orange   = { terminal = 202, graphical = '#ff5f00' },
+    mandarin_jelly = { terminal = 208, graphical = '#ff8800' },  -- Cloudberry
     white          = { terminal = 231, graphical = '#ffffff' },
 }
 

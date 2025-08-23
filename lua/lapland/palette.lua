@@ -12,7 +12,7 @@ local palette = {
     active     = colors.gray4,
     -- "Fruit" palette
     red        = colors.fancy_fuchsia,
-    orange     = colors.vivid_orange,
+    orange     = colors.mandarin_jelly,
     purple     = colors.purple_climax,
     darkyellow = colors.daddy_o,
     yellow     = colors.vic_20_creme,
