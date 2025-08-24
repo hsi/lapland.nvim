@@ -136,7 +136,7 @@ local general_links = {
 
 local function initialize()
     if vim.g.colors_name then
-        vim.cmd('highlight clear')
+        vim.cmd.highlight('clear')
     end
 
     vim.o.background = 'dark'
