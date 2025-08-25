@@ -12,7 +12,7 @@ local colors = {
     hobgoblin      = { terminal =  36, graphical = '#00af87' },
     ice_cold_stare = { terminal = 153, graphical = '#afd7ff' },
     krishna_blue   = { terminal =  39, graphical = '#00afff' },
-    purple_climax  = { terminal =  93, graphical = '#8700ff' },
+    purple         = { terminal =  60, graphical = '#5f5f88' },  -- Bilberry
     vic_20_creme   = { terminal = 229, graphical = '#ffffaf' },
     mandarin_jelly = { terminal = 208, graphical = '#ff8800' },  -- Cloudberry
     white          = { terminal = 231, graphical = '#ffffff' },

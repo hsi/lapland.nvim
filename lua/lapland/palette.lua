@@ -13,7 +13,7 @@ local palette = {
     -- "Fruit" palette
     red        = colors.fancy_fuchsia,
     orange     = colors.mandarin_jelly,
-    purple     = colors.purple_climax,
+    purple     = colors.purple,
     darkyellow = colors.daddy_o,
     yellow     = colors.vic_20_creme,
     green      = colors.hobgoblin,
