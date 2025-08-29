@@ -4,6 +4,11 @@ local colors = require('lapland.colors')
 
 local sky = {
     {
+        darker   = colors.black,
+        default  = colors.gray1,
+        brighter = colors.gray2,
+    },
+    {
         darker   = colors.gray1,
         default  = colors.gray2,
         brighter = colors.gray3,
@@ -17,6 +22,11 @@ local sky = {
         darker   = colors.gray3,
         default  = colors.gray4,
         brighter = colors.gray5,
+    },
+    {
+        darker   = colors.gray4,
+        default  = colors.gray5,
+        brighter = colors.gray6,
     },
 }
 
