@@ -7,6 +7,7 @@ local M = {}
 
 local default_options = {
     sky = 0,
+    snow = 0,
 }
 
 M.options = nil

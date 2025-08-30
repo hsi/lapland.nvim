@@ -31,9 +31,21 @@ local sky = {
 }
 
 local snow = {
-    darker   = colors.gray9,
-    default  = colors.gray22,
-    brighter = colors.white,
+    {
+        darker   = colors.gray10,
+        default  = colors.gray20,
+        brighter = colors.gray23,
+    },
+    {
+        darker   = colors.gray11,
+        default  = colors.gray21,
+        brighter = colors.gray24,
+    },
+    {
+        darker   = colors.gray12,
+        default  = colors.gray22,
+        brighter = colors.white,
+    },
 }
 
 local palette = {
@@ -53,7 +65,7 @@ local palette = {
 
 function M.build(options)
     palette.sky = sky[math.min(math.max(math.floor(#sky/2 + 0.5) + options.sky, 1), #sky)]
-    palette.snow = snow
+    palette.snow = snow[math.min(math.max(math.floor(#snow/2 + 0.5) + options.snow, 1), #snow)]
 
     return palette
 end
