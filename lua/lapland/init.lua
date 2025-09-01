@@ -181,6 +181,15 @@ function M.config(options)
 end
 
 
+function M.dump_config()
+    print('-- after/plugin/lapland.lua')
+    print('require(\'lapland\').config({')
+    print('    sky  = ' .. M.options.sky .. ',')
+    print('    snow = ' .. M.options.snow .. ',')
+    print('})')
+end
+
+
 function M.setup()
     if not vim.version or vim.version().api_level < 9 then
         return
