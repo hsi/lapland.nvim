@@ -121,7 +121,7 @@ local function build_builtins(palette)
         WarningMsg   = { foreground = palette.orange, },
         Whitespace   = { foreground = palette.snow.brighter, background = palette.magenta, },
         WildMenu     = { foreground = palette.yellow, },
-        WinSeparator = { foreground = palette.snow.darker, }
+        WinSeparator = { foreground = palette.gold, }
     }
 end
 
