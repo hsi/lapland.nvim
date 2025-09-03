@@ -181,6 +181,44 @@ function M.config(options)
 end
 
 
+local function set_highlights()
+    local palette = require('lapland.palette').build(M.options)
+
+    local builtins = build_builtins(palette)
+    for group_name, properties in pairs(builtins) do
+        highlight(group_name, properties.foreground, properties.background, properties.attributes)
+    end
+
+    local generals = build_generals(palette)
+    for group_name, properties in pairs(generals) do
+        highlight(group_name, properties.foreground, properties.background, properties.attributes)
+    end
+end
+
+
+local function set_highlight_links()
+    for from_group, to_group in pairs(builtin_links) do
+        highlight_link(from_group, to_group)
+    end
+
+    for from_group, to_group in pairs(general_links) do
+        highlight_link(from_group, to_group)
+    end
+end
+
+
+function M.adjust_sky(delta)
+    M.options.sky = M.options.sky + delta
+    set_highlights()
+end
+
+
+function M.adjust_snow(delta)
+    M.options.snow = M.options.snow + delta
+    set_highlights()
+end
+
+
 function M.dump_config()
     print('-- after/plugin/lapland.lua')
     print('require(\'lapland\').config({')
@@ -197,25 +235,8 @@ function M.setup()
 
     initialize()
 
-    local palette = require('lapland.palette').build(M.options)
-
-    local builtins = build_builtins(palette)
-    for group_name, properties in pairs(builtins) do
-        highlight(group_name, properties.foreground, properties.background, properties.attributes)
-    end
-
-    for from_group, to_group in pairs(builtin_links) do
-        highlight_link(from_group, to_group)
-    end
-
-    local generals = build_generals(palette)
-    for group_name, properties in pairs(generals) do
-        highlight(group_name, properties.foreground, properties.background, properties.attributes)
-    end
-
-    for from_group, to_group in pairs(general_links) do
-        highlight_link(from_group, to_group)
-    end
+    set_highlights()
+    set_highlight_links()
 end
 
 return M
