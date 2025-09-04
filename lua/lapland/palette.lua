@@ -32,17 +32,27 @@ local sky = {
 
 local snow = {
     {
+        darker   = colors.gray9,
+        default  = colors.gray18,
+        brighter = colors.gray21,
+    },
+    {
         darker   = colors.gray10,
+        default  = colors.gray19,
+        brighter = colors.gray22,
+    },
+    {
+        darker   = colors.gray11,
         default  = colors.gray20,
         brighter = colors.gray23,
     },
     {
-        darker   = colors.gray11,
+        darker   = colors.gray12,
         default  = colors.gray21,
         brighter = colors.gray24,
     },
     {
-        darker   = colors.gray12,
+        darker   = colors.gray13,
         default  = colors.gray22,
         brighter = colors.white,
     },
