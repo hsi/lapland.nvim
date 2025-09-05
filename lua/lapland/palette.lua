@@ -62,6 +62,7 @@ local palette = {
     -- "Snow" palette
     hint       = colors.gray13,
     -- "Fruit" palette
+    red     = colors.glass_bull,
     magenta = colors.fancy_fuchsia,
     green   = colors.hobgoblin,
     blue    = colors.krishna_blue,

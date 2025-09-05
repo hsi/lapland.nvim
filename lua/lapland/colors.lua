@@ -28,6 +28,7 @@ local colors = {
     --
     daddy_o        = { terminal = 144, graphical = '#b0b088' },
     fancy_fuchsia  = { terminal = 198, graphical = '#ff0088' },
+    glass_bull     = { terminal =  88, graphical = '#880000' },
     hobgoblin      = { terminal =  36, graphical = '#00b088' },
     ice_cold_stare = { terminal = 153, graphical = '#b0d8ff' },  -- Light blueberry
     krishna_blue   = { terminal =  39, graphical = '#00b0ff' },  -- Blueberry

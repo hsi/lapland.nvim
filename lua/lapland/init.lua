@@ -75,12 +75,12 @@ local function build_builtins(palette)
         Directory    = { foreground = palette.blue, attributes = { bold = true }, },
         DiffAdd      = { foreground = palette.green, },
         -- DiffChange link
-        DiffDelete   = { foreground = palette.magenta, },
+        DiffDelete   = { foreground = palette.red, },
         -- DiffText link
         EndOfBuffer  = { foreground = palette.snow.darker, attributes = { bold = true }, },
         -- TermCursor link
         TermCursorNC = { foreground = palette.sky.default, background = palette.hint, },
-        ErrorMsg     = { foreground = palette.snow.brighter, background = palette.magenta, attributes = { bold = true }, },
+        ErrorMsg     = { foreground = palette.snow.brighter, background = palette.red, attributes = { bold = true }, },
         VertSplit    = { foreground = palette.hint, },
         Folded       = { foreground = palette.blue, attributes = { bold = true }, },
         FoldColumn   = { foreground = palette.hint, },
@@ -106,7 +106,7 @@ local function build_builtins(palette)
         QuickFixLine = { foreground = palette.snow.brighter, attributes = { bold = true }, },
         Search       = { foreground = palette.yellow, background = palette.purple, attributes = { bold = true }, },
         SpecialKey   = { foreground = palette.yellow, attributes = { bold = true }, },
-        SpellBad     = { foreground = palette.magenta, attributes = { underline = true }, },
+        SpellBad     = { foreground = palette.red, attributes = { underline = true }, },
         -- SpellCap link
         SpellLocal   = { attributes = { underline = true }, },
         SpellRare    = { foreground = palette.orange, attributes = { underline = true }, },
@@ -119,7 +119,7 @@ local function build_builtins(palette)
         Visual       = { background = palette.purple, },
         -- VisualNOS link
         WarningMsg   = { foreground = palette.orange, },
-        Whitespace   = { foreground = palette.snow.brighter, background = palette.magenta, },
+        Whitespace   = { foreground = palette.snow.brighter, background = palette.red, },
         WildMenu     = { foreground = palette.yellow, },
         WinSeparator = { foreground = palette.gold, }
     }
@@ -152,7 +152,7 @@ local function build_generals(palette)
         --
         Ignore      = { foreground = palette.sky.darker, background = palette.snow.brighter, },
         --
-        Error       = { foreground = palette.snow.brighter, background = palette.magenta, attributes = { bold = true }, },
+        Error       = { foreground = palette.snow.brighter, background = palette.red, attributes = { bold = true }, },
         --
         Todo        = { foreground = palette.sky.default, background = palette.snow.brighter, attributes = { bold = true }, },
     }
