@@ -16,7 +16,6 @@ local builtin_links = {
     CursorIM     = 'Cursor',
     CursorColumn = 'CursorLine',
     DiffChange   = 'Normal',
-    DiffText     = 'DiffAdd',
     TermCursor   = 'Cursor',
     IncSearch    = 'Search',
     NormalNC     = 'Normal',
@@ -76,7 +75,7 @@ local function build_builtins(palette)
         DiffAdd      = { foreground = palette.green, },
         -- DiffChange link
         DiffDelete   = { foreground = palette.red, },
-        -- DiffText link
+        DiffText   = { foreground = palette.orange, },
         EndOfBuffer  = { foreground = palette.snow.darker, attributes = { bold = true }, },
         -- TermCursor link
         TermCursorNC = { foreground = palette.sky.default, background = palette.hint, },
