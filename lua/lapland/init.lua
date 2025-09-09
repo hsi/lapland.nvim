@@ -5,6 +5,8 @@
 
 local M = {}
 
+local palettes = require('lapland.palettes')
+
 local default_options = {
     sky = 0,
     snow = 0,
@@ -181,7 +183,7 @@ end
 
 
 local function set_highlights()
-    local palette = require('lapland.palette').build(M.options)
+    local palette = palettes.build(M.options)
 
     local builtins = build_builtins(palette)
     for group_name, properties in pairs(builtins) do

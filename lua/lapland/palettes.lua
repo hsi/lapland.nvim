@@ -2,7 +2,7 @@ local M = {}
 
 local colors = require('lapland.colors')
 
-local sky = {
+local skies = {
     {
         darker   = colors.black,
         default  = colors.gray1,
@@ -30,7 +30,7 @@ local sky = {
     },
 }
 
-local snow = {
+local snows = {
     {
         darker   = colors.gray9,
         default  = colors.gray18,
@@ -58,27 +58,34 @@ local snow = {
     },
 }
 
-local palette = {
-    -- "Snow" palette
-    hint       = colors.gray13,
-    -- "Fruit" palette
-    red     = colors.glass_bull,
-    magenta = colors.fancy_fuchsia,
-    green   = colors.hobgoblin,
-    blue    = colors.krishna_blue,
-    cyan    = colors.ice_cold_stare,
-    yellow  = colors.vic_20_creme,
-    orange  = colors.mandarin_jelly,
-    gold    = colors.daddy_o,
-    purple  = colors.purple,
+local fruits = {
+    {
+        hint    = colors.gray13,
+        red     = colors.glass_bull,
+        magenta = colors.fancy_fuchsia,
+        green   = colors.hobgoblin,
+        blue    = colors.krishna_blue,
+        cyan    = colors.ice_cold_stare,
+        yellow  = colors.vic_20_creme,
+        orange  = colors.mandarin_jelly,
+        gold    = colors.daddy_o,
+        purple  = colors.purple,
+    },
 }
 
 
-function M.build(options)
-    palette.sky = sky[math.min(math.max(math.floor(#sky/2 + 0.5) + options.sky, 1), #sky)]
-    palette.snow = snow[math.min(math.max(math.floor(#snow/2 + 0.5) + options.snow, 1), #snow)]
+function M.middle_index(table)
+    return math.floor(#table + 1)/2
+end
 
-    return palette
+
+function M.build(options)
+    return vim.tbl_extend(
+        'force',
+        { sky = skies[math.min(math.max(M.middle_index(skies) + options.sky, 1), #skies)] },
+        { snow = snows[math.min(math.max(M.middle_index(snows) + options.snow, 1), #snows)] },
+        fruits[1]
+    )
 end
 
 return M
