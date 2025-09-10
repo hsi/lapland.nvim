@@ -75,7 +75,7 @@ local fruits = {
 
 
 function M.middle_index(table)
-    return math.floor(#table + 1)/2
+    return math.floor((#table + 1)/2)
 end
 
 
