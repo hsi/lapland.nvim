@@ -80,12 +80,11 @@ end
 
 
 function M.build(options)
-    return vim.tbl_extend(
-        'force',
-        { sky = skies[math.min(math.max(M.middle_index(skies) + options.sky, 1), #skies)] },
-        { snow = snows[math.min(math.max(M.middle_index(snows) + options.snow, 1), #snows)] },
-        fruits[1]
-    )
+    local sky = skies[math.min(math.max(M.middle_index(skies) + options.sky, 1), #skies)]
+    local snow = snows[math.min(math.max(M.middle_index(snows) + options.snow, 1), #snows)]
+    local fruit = fruits[1]
+
+    return sky, snow, fruit
 end
 
 return M

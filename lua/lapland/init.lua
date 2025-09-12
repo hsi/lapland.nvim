@@ -6,6 +6,9 @@
 local M = {}
 
 local palettes = require('lapland.palettes')
+local sky
+local snow
+local fruit
 
 local default_options = {
     sky = 0,
@@ -65,97 +68,97 @@ local function initialize()
 end
 
 
-local function build_builtins(palette)
+local function build_builtins()
     return {
-        ColorColumn  = { background = palette.sky.brighter, },
-        Conceal      = { foreground = palette.snow.brighter, },
-        Cursor       = { foreground = palette.sky.default, background = palette.green, },
+        ColorColumn  = { background = sky.brighter, },
+        Conceal      = { foreground = snow.brighter, },
+        Cursor       = { foreground = sky.default, background = fruit.green, },
         -- CursorIM link
         -- CursorColumn link
-        CursorLine   = { background = palette.sky.brighter, },
-        Directory    = { foreground = palette.blue, attributes = { bold = true }, },
-        DiffAdd      = { foreground = palette.green, },
+        CursorLine   = { background = sky.brighter, },
+        Directory    = { foreground = fruit.blue, attributes = { bold = true }, },
+        DiffAdd      = { foreground = fruit.green, },
         -- DiffChange link
-        DiffDelete   = { foreground = palette.red, },
-        DiffText   = { foreground = palette.orange, },
-        EndOfBuffer  = { foreground = palette.snow.darker, attributes = { bold = true }, },
+        DiffDelete   = { foreground = fruit.red, },
+        DiffText     = { foreground = fruit.orange, },
+        EndOfBuffer  = { foreground = snow.darker, attributes = { bold = true }, },
         -- TermCursor link
-        TermCursorNC = { foreground = palette.sky.default, background = palette.hint, },
-        ErrorMsg     = { foreground = palette.snow.brighter, background = palette.red, attributes = { bold = true }, },
-        VertSplit    = { foreground = palette.hint, },
-        Folded       = { foreground = palette.blue, attributes = { bold = true }, },
-        FoldColumn   = { foreground = palette.hint, },
+        TermCursorNC = { foreground = sky.default, background = fruit.hint, },
+        ErrorMsg     = { foreground = snow.brighter, background = fruit.red, attributes = { bold = true }, },
+        VertSplit    = { foreground = fruit.hint, },
+        Folded       = { foreground = fruit.blue, attributes = { bold = true }, },
+        FoldColumn   = { foreground = fruit.hint, },
         SignColumn   = { attributes = { bold = true }, },
         -- IncSearch link
-        Substitute   = { foreground = palette.sky.default, background = palette.green, attributes = { bold = true }, },
-        LineNr       = { foreground = palette.snow.darker, },
-        CursorLineNr = { foreground = palette.gold, background = palette.sky.brighter, },
-        MatchParen   = { foreground = palette.snow.brighter, background = palette.snow.darker, attributes = { bold = true }, },
-        ModeMsg      = { foreground = palette.gold, },
-        MsgArea      = { foreground = palette.gold, },
-        MsgSeparator = { foreground = palette.hint, },
-        MoreMsg      = { foreground = palette.hint, attributes = { bold = true }, },
-        NonText      = { foreground = palette.snow.darker, },
-        Normal       = { foreground = palette.snow.default, background = palette.sky.default, },
-        NormalFloat  = { foreground = palette.snow.brighter, background = palette.sky.darker, },
+        Substitute   = { foreground = sky.default, background = fruit.green, attributes = { bold = true }, },
+        LineNr       = { foreground = snow.darker, },
+        CursorLineNr = { foreground = fruit.gold, background = sky.brighter, },
+        MatchParen   = { foreground = snow.brighter, background = snow.darker, attributes = { bold = true }, },
+        ModeMsg      = { foreground = fruit.gold, },
+        MsgArea      = { foreground = fruit.gold, },
+        MsgSeparator = { foreground = fruit.hint, },
+        MoreMsg      = { foreground = fruit.hint, attributes = { bold = true }, },
+        NonText      = { foreground = snow.darker, },
+        Normal       = { foreground = snow.default, background = sky.default, },
+        NormalFloat  = { foreground = snow.brighter, background = sky.darker, },
         -- NormalNC link
-        Pmenu        = { foreground = palette.hint, background = palette.sky.darker, },
-        PmenuSel     = { foreground = palette.yellow, background = palette.sky.darker, },
-        PmenuSbar    = { background = palette.sky.darker, },
-        PmenuThumb   = { background = palette.hint, },
-        Question     = { foreground = palette.snow.brighter, attributes = { bold = true }, },
-        QuickFixLine = { foreground = palette.snow.brighter, attributes = { bold = true }, },
-        Search       = { foreground = palette.yellow, background = palette.purple, attributes = { bold = true }, },
-        SpecialKey   = { foreground = palette.yellow, attributes = { bold = true }, },
-        SpellBad     = { foreground = palette.red, attributes = { underline = true }, },
+        Pmenu        = { foreground = fruit.hint, background = sky.darker, },
+        PmenuSel     = { foreground = fruit.yellow, background = sky.darker, },
+        PmenuSbar    = { background = sky.darker, },
+        PmenuThumb   = { background = fruit.hint, },
+        Question     = { foreground = snow.brighter, attributes = { bold = true }, },
+        QuickFixLine = { foreground = snow.brighter, attributes = { bold = true }, },
+        Search       = { foreground = fruit.yellow, background = fruit.purple, attributes = { bold = true }, },
+        SpecialKey   = { foreground = fruit.yellow, attributes = { bold = true }, },
+        SpellBad     = { foreground = fruit.red, attributes = { underline = true }, },
         -- SpellCap link
         SpellLocal   = { attributes = { underline = true }, },
-        SpellRare    = { foreground = palette.orange, attributes = { underline = true }, },
-        StatusLine   = { foreground = palette.gold, attributes = { bold = true }, },
-        StatusLineNC = { foreground = palette.hint, attributes = { bold = true }, },
-        TabLine      = { foreground = palette.snow.darker, },
-        TabLineFill  = { background = palette.sky.default, },
-        TabLineSel   = { foreground = palette.gold, },
-        Title        = { foreground = palette.blue, attributes = { bold = true }, },
-        Visual       = { background = palette.purple, },
+        SpellRare    = { foreground = fruit.orange, attributes = { underline = true }, },
+        StatusLine   = { foreground = fruit.gold, attributes = { bold = true }, },
+        StatusLineNC = { foreground = fruit.hint, attributes = { bold = true }, },
+        TabLine      = { foreground = snow.darker, },
+        TabLineFill  = { background = sky.default, },
+        TabLineSel   = { foreground = fruit.gold, },
+        Title        = { foreground = fruit.blue, attributes = { bold = true }, },
+        Visual       = { background = fruit.purple, },
         -- VisualNOS link
-        WarningMsg   = { foreground = palette.orange, },
-        Whitespace   = { foreground = palette.snow.brighter, background = palette.red, },
-        WildMenu     = { foreground = palette.yellow, },
-        WinSeparator = { foreground = palette.gold, }
+        WarningMsg   = { foreground = fruit.orange, },
+        Whitespace   = { foreground = snow.brighter, background = fruit.red, },
+        WildMenu     = { foreground = fruit.yellow, },
+        WinSeparator = { foreground = fruit.gold, }
     }
 end
 
 
-local function build_generals(palette)
+local function build_generals()
     return {
-        Comment     = { foreground = palette.snow.darker, },
+        Comment     = { foreground = snow.darker, },
         --
-        Constant    = { foreground = palette.magenta, },
-        String      = { foreground = palette.green, },
-        Character   = { foreground = palette.green, },
+        Constant    = { foreground = fruit.magenta, },
+        String      = { foreground = fruit.green, },
+        Character   = { foreground = fruit.green, },
         --
-        Identifier  = { foreground = palette.cyan, },
+        Identifier  = { foreground = fruit.cyan, },
         --
-        Statement   = { foreground = palette.yellow, },
-        Conditional = { foreground = palette.yellow, attributes = { bold = true }, },
-        Repeat      = { foreground = palette.yellow, attributes = { bold = true }, },
-        Operator    = { foreground = palette.blue, },
-        Exception   = { foreground = palette.yellow, attributes = { bold = true }, },
+        Statement   = { foreground = fruit.yellow, },
+        Conditional = { foreground = fruit.yellow, attributes = { bold = true }, },
+        Repeat      = { foreground = fruit.yellow, attributes = { bold = true }, },
+        Operator    = { foreground = fruit.blue, },
+        Exception   = { foreground = fruit.yellow, attributes = { bold = true }, },
         --
-        PreProc     = { foreground = palette.blue, },
+        PreProc     = { foreground = fruit.blue, },
         --
-        Type        = { foreground = palette.blue, attributes = { bold = true }, },
+        Type        = { foreground = fruit.blue, attributes = { bold = true }, },
         --
-        Special     = { foreground = palette.snow.brighter, },
+        Special     = { foreground = snow.brighter, },
         --
         Underlined  = { attributes = { underline = true }, },
         --
-        Ignore      = { foreground = palette.sky.darker, background = palette.snow.brighter, },
+        Ignore      = { foreground = sky.darker, background = snow.brighter, },
         --
-        Error       = { foreground = palette.snow.brighter, background = palette.red, attributes = { bold = true }, },
+        Error       = { foreground = snow.brighter, background = fruit.red, attributes = { bold = true }, },
         --
-        Todo        = { foreground = palette.sky.default, background = palette.snow.brighter, attributes = { bold = true }, },
+        Todo        = { foreground = sky.default, background = snow.brighter, attributes = { bold = true }, },
     }
 end
 
@@ -183,14 +186,14 @@ end
 
 
 local function set_highlights()
-    local palette = palettes.build(M.options)
+    sky, snow, fruit = palettes.build(M.options)
 
-    local builtins = build_builtins(palette)
+    local builtins = build_builtins()
     for group_name, properties in pairs(builtins) do
         highlight(group_name, properties.foreground, properties.background, properties.attributes)
     end
 
-    local generals = build_generals(palette)
+    local generals = build_generals()
     for group_name, properties in pairs(generals) do
         highlight(group_name, properties.foreground, properties.background, properties.attributes)
     end
