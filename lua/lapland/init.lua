@@ -55,6 +55,10 @@ local general_links = {
 }
 
 local function initialize()
+    if not vim.version or vim.version().api_level < 9 then
+        return false
+    end
+
     if not M.options then
         M.options = default_options
     end
@@ -65,6 +69,8 @@ local function initialize()
 
     vim.o.background = 'dark'
     vim.g.colors_name = 'lapland'
+
+    return true
 end
 
 
@@ -233,11 +239,9 @@ end
 
 
 function M.setup()
-    if not vim.version or vim.version().api_level < 9 then
+    if not initialize() then
         return
     end
-
-    initialize()
 
     set_highlights()
     set_highlight_links()
