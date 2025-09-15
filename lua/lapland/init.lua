@@ -10,12 +10,10 @@ local sky
 local snow
 local fruit
 
-local default_options = {
+local options = {
     sky = 0,
     snow = 0,
 }
-
-M.options = nil
 
 local builtin_links = {
     CursorIM     = 'Cursor',
@@ -57,10 +55,6 @@ local general_links = {
 local function initialize()
     if not vim.version or vim.version().api_level < 9 then
         return false
-    end
-
-    if not M.options then
-        M.options = default_options
     end
 
     if vim.g.colors_name then
@@ -186,13 +180,13 @@ local function highlight_link(from_group, to_group)
 end
 
 
-function M.config(options)
-    M.options = vim.tbl_extend('force', default_options, options or {})
+function M.config(user_options)
+    options = vim.tbl_extend('force', options, user_options or {})
 end
 
 
 local function set_highlights()
-    sky, snow, fruit = palettes.build(M.options)
+    sky, snow, fruit = palettes.build(options)
 
     local builtins = build_builtins()
     for group_name, properties in pairs(builtins) do
@@ -218,13 +212,13 @@ end
 
 
 function M.adjust_sky(delta)
-    M.options.sky = M.options.sky + delta
+    options.sky = options.sky + delta
     set_highlights()
 end
 
 
 function M.adjust_snow(delta)
-    M.options.snow = M.options.snow + delta
+    options.snow = options.snow + delta
     set_highlights()
 end
 
@@ -232,8 +226,8 @@ end
 function M.dump_config()
     print('-- after/plugin/lapland.lua')
     print('require(\'lapland\').config({')
-    print('    sky  = ' .. M.options.sky .. ',')
-    print('    snow = ' .. M.options.snow .. ',')
+    print('    sky  = ' .. options.sky .. ',')
+    print('    snow = ' .. options.snow .. ',')
     print('})')
 end
 
