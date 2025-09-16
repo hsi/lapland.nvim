@@ -10,10 +10,28 @@ local sky
 local snow
 local fruit
 
-local options = {
-    sky = 0,
-    snow = 0,
-}
+local options = setmetatable(
+    {
+        _sky = 0,
+        _snow = 0,
+    },
+    {
+        __index = function(table, key)
+            if key == 'sky' then
+                return table._sky
+            elseif key == 'snow' then
+                return table._snow
+            end
+        end,
+        __newindex = function(table, key, value)
+            if key == 'sky' then
+                table._sky = value
+            elseif key == 'snow' then
+                table._snow = value
+            end
+        end,
+    }
+)
 
 local builtin_links = {
     CursorIM     = 'Cursor',
@@ -181,7 +199,9 @@ end
 
 
 function M.config(user_options)
-    options = vim.tbl_extend('force', options, user_options or {})
+    for key, value in pairs(user_options) do
+        options[key] = value
+    end
 end
 
 
