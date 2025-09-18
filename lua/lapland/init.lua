@@ -5,6 +5,7 @@
 
 local M = {}
 
+local MINIMUM_NVIM_API_LEVEL = 9
 local palettes = require('lapland.palettes')
 local sky
 local snow
@@ -71,7 +72,7 @@ local general_links = {
 }
 
 local function initialize()
-    if not vim.version or vim.version().api_level < 9 then
+    if not vim.version or vim.version().api_level < MINIMUM_NVIM_API_LEVEL then
         return false
     end
 
