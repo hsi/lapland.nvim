@@ -11,28 +11,27 @@ local sky
 local snow
 local fruit
 
-local options = setmetatable(
-    {
-        _sky = 0,
-        _snow = 0,
-    },
-    {
-        __index = function(table, key)
-            if key == 'sky' then
-                return table._sky
-            elseif key == 'snow' then
-                return table._snow
-            end
-        end,
-        __newindex = function(table, key, value)
-            if key == 'sky' then
-                table._sky = value
-            elseif key == 'snow' then
-                table._snow = value
-            end
-        end,
-    }
-)
+local options = setmetatable({
+    _sky = 0,
+    _snow = 0,
+}, {
+    __index = function(table, key)
+        if key == 'sky' then
+            return table._sky
+        elseif key == 'snow' then
+            return table._snow
+        end
+    end,
+    __newindex = function(table, key, value)
+        if key == 'sky' then
+            local skies_radius = palettes.get_skies_radius()
+            table._sky = math.min(math.max(value, -skies_radius), skies_radius)
+        elseif key == 'snow' then
+            local snows_radius = palettes.get_snows_radius()
+            table._snow = math.min(math.max(value, -snows_radius), snows_radius)
+        end
+    end,
+})
 
 local builtin_links = {
     CursorIM     = 'Cursor',

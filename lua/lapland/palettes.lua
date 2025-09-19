@@ -79,9 +79,19 @@ function M.middle_index(table)
 end
 
 
+function M.get_skies_radius()
+    return (#skies - 1)/2
+end
+
+
+function M.get_snows_radius()
+    return (#snows - 1)/2
+end
+
+
 function M.build(options)
-    local sky = skies[math.min(math.max(M.middle_index(skies) + options.sky, 1), #skies)]
-    local snow = snows[math.min(math.max(M.middle_index(snows) + options.snow, 1), #snows)]
+    local sky = skies[M.middle_index(skies) + options.sky]
+    local snow = snows[M.middle_index(snows) + options.snow]
     local fruit = fruits[1]
 
     return sky, snow, fruit
