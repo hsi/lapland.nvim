@@ -74,7 +74,7 @@ local fruits = {
 }
 
 
-function M.middle_index(table)
+local function middle_index(table)
     return math.floor((#table + 1)/2)
 end
 
@@ -90,8 +90,8 @@ end
 
 
 function M.build(options)
-    local sky = skies[M.middle_index(skies) + options.sky]
-    local snow = snows[M.middle_index(snows) + options.snow]
+    local sky = skies[middle_index(skies) + options.sky]
+    local snow = snows[middle_index(snows) + options.snow]
     local fruit = fruits[1]
 
     return sky, snow, fruit
