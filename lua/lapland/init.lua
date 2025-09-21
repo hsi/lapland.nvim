@@ -16,11 +16,7 @@ local options = setmetatable({
     _snow = 0,
 }, {
     __index = function(table, key)
-        if key == 'sky' then
-            return table._sky
-        elseif key == 'snow' then
-            return table._snow
-        end
+        return table['_' .. key]
     end,
     __newindex = function(table, key, value)
         if key == 'sky' then
