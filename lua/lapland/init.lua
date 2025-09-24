@@ -240,11 +240,15 @@ end
 
 
 function M.dump_config()
-    print('-- after/plugin/lapland.lua')
-    print('require(\'lapland\').config({')
-    print('    sky  = ' .. options.sky .. ',')
-    print('    snow = ' .. options.snow .. ',')
-    print('})')
+    local INDENT = '    '
+    print(string.format(
+        "-- after/plugin/lapland.lua\n" ..
+        "require('lapland').config({\n" ..
+        "%ssky  = %d,\n" ..
+        "%ssnow = %d,\n" ..
+        "})",
+        INDENT, options.sky, INDENT, options.snow
+    ))
 end
 
 
