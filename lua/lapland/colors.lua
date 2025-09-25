@@ -1,4 +1,4 @@
-local colors = {
+return {
     black          = { terminal =   0, graphical = '#000000' },
     gray1          = { terminal = 232, graphical = '#020202' },
     gray2          = { terminal = 233, graphical = '#0a0a0a' },
@@ -36,5 +36,3 @@ local colors = {
     vic_20_creme   = { terminal = 229, graphical = '#ffffb0' },
     mandarin_jelly = { terminal = 208, graphical = '#ff8800' },  -- Cloudberry
 }
-
-return colors
