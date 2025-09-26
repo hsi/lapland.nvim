@@ -60,7 +60,6 @@ local snows = {
 
 local fruits = {
     {
-        hint    = colors.gray13,
         red     = colors.glass_bull,
         magenta = colors.fancy_fuchsia,
         green   = colors.hobgoblin,
