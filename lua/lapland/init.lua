@@ -32,7 +32,10 @@ local options = setmetatable({
 local builtin_links = {
     CursorIM     = 'Cursor',
     CursorColumn = 'CursorLine',
+    DiffAdd      = 'Added',
     DiffChange   = 'Normal',
+    DiffDelete   = 'Removed',
+    DiffText     = 'Changed',
     TermCursor   = 'Cursor',
     IncSearch    = 'Search',
     NormalNC     = 'Normal',
@@ -84,62 +87,81 @@ end
 
 local function build_builtins()
     return {
-        ColorColumn  = { background = sky.brighter, },
-        Conceal      = { foreground = snow.brighter, },
-        Cursor       = { foreground = sky.default, background = fruit.green, },
+        ColorColumn      = { background = sky.brighter, },
+        Conceal          = { foreground = snow.brighter, },
+        CurSearch        = {},
+        Cursor           = { foreground = sky.default, background = fruit.green, },
+        lCursor          = {},
         -- CursorIM link
         -- CursorColumn link
-        CursorLine   = { background = sky.brighter, },
-        Directory    = { foreground = fruit.blue, attributes = { bold = true }, },
-        DiffAdd      = { foreground = fruit.green, },
+        CursorLine       = { background = sky.brighter, },
+        Directory        = { foreground = fruit.blue, attributes = { bold = true }, },
+        -- DiffAdd link
         -- DiffChange link
-        DiffDelete   = { foreground = fruit.red, },
-        DiffText     = { foreground = fruit.orange, },
-        EndOfBuffer  = { foreground = snow.darker, attributes = { bold = true }, },
+        -- DiffDelete link
+        -- DiffText
+        EndOfBuffer      = { foreground = snow.darker, attributes = { bold = true }, },
         -- TermCursor link
-        TermCursorNC = { foreground = sky.default, background = snow.darker, },
-        ErrorMsg     = { foreground = snow.brighter, background = fruit.red, attributes = { bold = true }, },
-        VertSplit    = { foreground = snow.darker, },
-        Folded       = { foreground = fruit.blue, attributes = { bold = true }, },
-        FoldColumn   = { foreground = snow.darker, },
-        SignColumn   = { attributes = { bold = true }, },
+        ErrorMsg         = { foreground = snow.brighter, background = fruit.red, attributes = { bold = true }, },
+        WinSeparator     = { foreground = fruit.gold, },
+        Folded           = { foreground = fruit.blue, attributes = { bold = true }, },
+        FoldColumn       = { foreground = snow.darker, },
+        SignColumn       = { attributes = { bold = true }, },
         -- IncSearch link
-        Substitute   = { foreground = sky.default, background = fruit.green, attributes = { bold = true }, },
-        LineNr       = { foreground = snow.darker, },
-        CursorLineNr = { foreground = fruit.gold, background = sky.brighter, },
-        MatchParen   = { foreground = snow.brighter, background = snow.darker, attributes = { bold = true }, },
-        ModeMsg      = { foreground = fruit.gold, },
-        MsgArea      = { foreground = fruit.gold, },
-        MsgSeparator = { foreground = snow.darker, },
-        MoreMsg      = { foreground = snow.darker, attributes = { bold = true }, },
-        NonText      = { foreground = snow.darker, },
-        Normal       = { foreground = snow.default, background = sky.default, },
-        NormalFloat  = { foreground = snow.brighter, background = sky.darker, },
+        Substitute       = { foreground = sky.default, background = fruit.green, attributes = { bold = true }, },
+        LineNr           = { foreground = snow.darker, },
+        LineNrAbove      = {},
+        LineNrBelow      = {},
+        CursorLineNr     = { foreground = fruit.gold, background = sky.brighter, },
+        CursorLineFold   = {},
+        CursorLineSign   = {},
+        MatchParen       = { foreground = snow.brighter, background = snow.darker, attributes = { bold = true }, },
+        ModeMsg          = { foreground = fruit.gold, },
+        MsgArea          = { foreground = fruit.gold, },
+        MsgSeparator     = { foreground = snow.darker, },
+        MoreMsg          = { foreground = snow.darker, attributes = { bold = true }, },
+        NonText          = { foreground = snow.darker, },
+        Normal           = { foreground = snow.default, background = sky.default, },
+        NormalFloat      = { foreground = snow.brighter, background = sky.darker, },
+        FloatBorder      = {},
+        FloatTitle       = {},
+        FloatFooter      = {},
         -- NormalNC link
-        Pmenu        = { foreground = snow.darker, background = sky.darker, },
-        PmenuSel     = { foreground = fruit.yellow, background = sky.darker, },
-        PmenuSbar    = { background = sky.darker, },
-        PmenuThumb   = { background = snow.darker, },
-        Question     = { foreground = snow.brighter, attributes = { bold = true }, },
-        QuickFixLine = { foreground = snow.brighter, attributes = { bold = true }, },
-        Search       = { foreground = fruit.yellow, background = fruit.purple, attributes = { bold = true }, },
-        SpecialKey   = { foreground = fruit.yellow, attributes = { bold = true }, },
-        SpellBad     = { foreground = fruit.red, attributes = { underline = true }, },
+        Pmenu            = { foreground = snow.darker, background = sky.darker, },
+        PmenuSel         = { foreground = fruit.yellow, background = sky.darker, },
+        PmenuKind        = {},
+        PmenuKindSel     = {},
+        PmenuExtra       = {},
+        PmenuExtraSel    = {},
+        PmenuSbar        = { background = sky.darker, },
+        PmenuThumb       = { background = snow.darker, },
+        PmenuMatch       = {},
+        PmenuMatchSel    = {},
+        ComplMatchIns    = {},
+        Question         = { foreground = snow.brighter, attributes = { bold = true }, },
+        QuickFixLine     = { foreground = snow.brighter, attributes = { bold = true }, },
+        Search           = { foreground = fruit.yellow, background = fruit.purple, attributes = { bold = true }, },
+        SnippetTabstop   = {},
+        SpecialKey       = { foreground = fruit.yellow, attributes = { bold = true }, },
+        SpellBad         = { foreground = fruit.red, attributes = { underline = true }, },
         -- SpellCap link
-        SpellLocal   = { attributes = { underline = true }, },
-        SpellRare    = { foreground = fruit.orange, attributes = { underline = true }, },
-        StatusLine   = { foreground = fruit.gold, attributes = { bold = true }, },
-        StatusLineNC = { foreground = snow.darker, attributes = { bold = true }, },
-        TabLine      = { foreground = snow.darker, },
-        TabLineFill  = { background = sky.default, },
-        TabLineSel   = { foreground = fruit.gold, },
-        Title        = { foreground = fruit.blue, attributes = { bold = true }, },
-        Visual       = { background = fruit.purple, },
+        SpellLocal       = { attributes = { underline = true }, },
+        SpellRare        = { foreground = fruit.orange, attributes = { underline = true }, },
+        StatusLine       = { foreground = fruit.gold, attributes = { bold = true }, },
+        StatusLineNC     = { foreground = snow.darker, attributes = { bold = true }, },
+        StatusLineTerm   = {},
+        StatusLineTermNC = {},
+        TabLine          = { foreground = snow.darker, },
+        TabLineFill      = { background = sky.default, },
+        TabLineSel       = { foreground = fruit.gold, },
+        Title            = { foreground = fruit.blue, attributes = { bold = true }, },
+        Visual           = { background = fruit.purple, },
         -- VisualNOS link
-        WarningMsg   = { foreground = fruit.orange, },
-        Whitespace   = { foreground = snow.brighter, background = fruit.red, },
-        WildMenu     = { foreground = fruit.yellow, },
-        WinSeparator = { foreground = fruit.gold, }
+        WarningMsg       = { foreground = fruit.orange, },
+        Whitespace       = { foreground = snow.brighter, background = fruit.red, },
+        WildMenu         = { foreground = fruit.yellow, },
+        WinBar           = {},
+        WinBarNC         = {},
     }
 end
 
@@ -151,20 +173,38 @@ local function build_generals()
         Constant    = { foreground = fruit.magenta, },
         String      = { foreground = fruit.green, },
         Character   = { foreground = fruit.green, },
+        -- Number link
+        -- Boolean link
+        -- Float link
         --
         Identifier  = { foreground = fruit.cyan, },
+        -- Function link
         --
         Statement   = { foreground = fruit.yellow, },
         Conditional = { foreground = fruit.yellow, attributes = { bold = true }, },
         Repeat      = { foreground = fruit.yellow, attributes = { bold = true }, },
+        -- Label link
         Operator    = { foreground = fruit.blue, },
+        -- Keyword link
         Exception   = { foreground = fruit.yellow, attributes = { bold = true }, },
         --
         PreProc     = { foreground = fruit.blue, },
+        -- Include link
+        -- Define link
+        -- Macro link
+        -- PreCondit link
         --
         Type        = { foreground = fruit.blue, attributes = { bold = true }, },
+        -- StorageClass link
+        -- Structure link
+        -- Typedef link
         --
         Special     = { foreground = snow.brighter, },
+        -- SpecialChar link
+        -- Tag link
+        -- Delimiter link
+        -- SpecialComment link
+        -- Debug link
         --
         Underlined  = { attributes = { underline = true }, },
         --
@@ -173,6 +213,10 @@ local function build_generals()
         Error       = { foreground = snow.brighter, background = fruit.red, attributes = { bold = true }, },
         --
         Todo        = { foreground = sky.default, background = snow.brighter, attributes = { bold = true }, },
+        --
+        Added       = { foreground = fruit.green, },
+        Changed     = { foreground = fruit.orange, },
+        Removed     = { foreground = fruit.red, },
     }
 end
 
