@@ -41,6 +41,8 @@ local builtin_links = {
     NormalNC     = 'Normal',
     SpellCap     = 'SpellBad',
     VisualNOS    = 'Visual',
+    WinBar       = 'StatusLine',
+    WinBarNC     = 'StatusLineNC',
 }
 
 local general_links = {
@@ -160,8 +162,8 @@ local function build_builtins()
         WarningMsg       = { foreground = fruit.orange, },
         Whitespace       = { foreground = snow.brighter, background = fruit.red, },
         WildMenu         = { foreground = fruit.yellow, },
-        WinBar           = {},
-        WinBarNC         = {},
+        -- WinBar
+        -- WinBarNC
     }
 end
 
