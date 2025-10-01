@@ -30,19 +30,21 @@ local options = setmetatable({
 })
 
 local builtin_links = {
-    CursorIM     = 'Cursor',
-    CursorColumn = 'CursorLine',
-    DiffAdd      = 'Added',
-    DiffChange   = 'Normal',
-    DiffDelete   = 'Removed',
-    DiffText     = 'Changed',
-    TermCursor   = 'Cursor',
-    IncSearch    = 'Search',
-    NormalNC     = 'Normal',
-    SpellCap     = 'SpellBad',
-    VisualNOS    = 'Visual',
-    WinBar       = 'StatusLine',
-    WinBarNC     = 'StatusLineNC',
+    CursorIM         = 'Cursor',
+    CursorColumn     = 'CursorLine',
+    DiffAdd          = 'Added',
+    DiffChange       = 'Normal',
+    DiffDelete       = 'Removed',
+    DiffText         = 'Changed',
+    TermCursor       = 'Cursor',
+    IncSearch        = 'Search',
+    NormalNC         = 'Normal',
+    SpellCap         = 'SpellBad',
+    StatusLineTerm   = 'StatusLine',
+    StatusLineTermNC = 'StatusLineNC',
+    VisualNOS        = 'Visual',
+    WinBar           = 'StatusLine',
+    WinBarNC         = 'StatusLineNC',
 }
 
 local general_links = {
@@ -151,8 +153,8 @@ local function build_builtins()
         SpellRare        = { foreground = fruit.orange, attributes = { underline = true }, },
         StatusLine       = { foreground = fruit.gold, attributes = { bold = true }, },
         StatusLineNC     = { foreground = snow.darker, attributes = { bold = true }, },
-        StatusLineTerm   = {},
-        StatusLineTermNC = {},
+        -- StatusLineTerm link
+        -- StatusLineTermNC link
         TabLine          = { foreground = snow.darker, },
         TabLineFill      = { background = sky.default, },
         TabLineSel       = { foreground = fruit.gold, },
