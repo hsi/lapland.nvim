@@ -38,6 +38,8 @@ local builtin_links = {
     DiffText         = 'Changed',
     TermCursor       = 'Cursor',
     IncSearch        = 'Search',
+    LineNrAbove      = 'LineNr',
+    LineNrBelow      = 'LineNr',
     NormalNC         = 'Normal',
     SpellCap         = 'SpellBad',
     StatusLineTerm   = 'StatusLine',
@@ -114,8 +116,8 @@ local function build_builtins()
         -- IncSearch link
         Substitute       = { foreground = sky.default, background = fruit.green, attributes = { bold = true }, },
         LineNr           = { foreground = snow.darker, },
-        LineNrAbove      = {},
-        LineNrBelow      = {},
+        -- LineNrAbove link
+        -- LineNrBelow link
         CursorLineNr     = { foreground = fruit.gold, background = sky.brighter, },
         CursorLineFold   = {},
         CursorLineSign   = {},
