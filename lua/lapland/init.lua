@@ -147,7 +147,7 @@ local function build_builtins()
         Question         = { foreground = snow.brighter, attributes = { bold = true }, },
         QuickFixLine     = { foreground = snow.brighter, attributes = { bold = true }, },
         Search           = { foreground = fruit.yellow, background = fruit.purple, attributes = { bold = true }, },
-        SnippetTabstop   = {},
+        SnippetTabstop   = { foreground = sky.default, background = fruit.blue, attributes = { bold = true }, },
         SpecialKey       = { foreground = fruit.yellow, attributes = { bold = true }, },
         SpellBad         = { foreground = fruit.red, attributes = { underline = true }, },
         -- SpellCap link
