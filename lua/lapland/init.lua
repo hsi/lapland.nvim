@@ -30,6 +30,7 @@ local options = setmetatable({
 })
 
 local builtin_links = {
+    CurSearch        = 'Search',
     CursorIM         = 'Cursor',
     CursorColumn     = 'CursorLine',
     DiffAdd          = 'Added',
@@ -95,7 +96,7 @@ local function build_builtins()
     return {
         ColorColumn      = { background = sky.brighter, },
         Conceal          = { foreground = snow.brighter, },
-        CurSearch        = {},
+        -- CurSearch link
         Cursor           = { foreground = sky.default, background = fruit.green, },
         lCursor          = {},
         -- CursorIM link
